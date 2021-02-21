@@ -13,6 +13,7 @@
                 preview toki pona
             </label>
             <label><input id="shadow" type="checkbox" />drop shadow</label>
+            <label><input id="stroke" type="checkbox" />white stroke</label>
         </fieldset>
         <textarea id="text">toki pona</textarea>
         <button id="go" onclick="draw()">go</button>
@@ -42,6 +43,11 @@
                     ctx.shadowOffsetY = 3;
                     ctx.shadowColor = "rgba(0,0,0,0.3)";
                     ctx.shadowBlur = 4;
+                };
+                if (document.getElementById('stroke').checked){
+                    ctx.strokeStyle = 'white';
+                    ctx.lineWidth = 4;
+                    ctx.strokeText(text.value, 0, 48);
                 };
                 ctx.fillText(text.value, 0,48);
             }
