@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style>
+            @font-face {font-family: linjasike; src: url(linja-sike-beta-2-for-u.otf)}
+
+        </style>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <label>
+                    <input id="preview" type="checkbox" onclick="setPreview(this);">
+                                 preview toki pona
+                </label>
+            </fieldset>
+            <textarea id="text"></textarea>
+            <button id="go">go</button>
+        </form>
+        <canvas id="canvas"></canvas>
+        <script>
+            const text = getElementById('text');
+            const setPreview = preview => () {
+                if (preview.preview.clicked){
+                    text.style.fontFamily = 'linjasike';
+                } else {
+                    text.style.fontFamily = 'arial';
+                }
+            };
+        </script>
+    </body>
+</html>
