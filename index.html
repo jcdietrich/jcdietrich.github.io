@@ -13,7 +13,27 @@
                 preview toki pona
             </label>
             <label><input id="shadow" type="checkbox" />drop shadow</label>
-            <label><input id="stroke" type="checkbox" />white stroke</label>
+            <label>
+                <select id="fontColour">
+                    <option value="black" >black</option>
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                    <option value="yellow">yellow</option>
+                    <option value="orange">orange</option>
+                </select>
+                font colour
+            </label>
+            <label>
+                <select id="strokeColour">
+                    <option value="none">none</option>
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                    <option value="yellow">yellow</option>
+                    <option value="orange">orange</option>
+                    <option value="black">black</option>
+                </select>
+                font outline colour
+            </label>
         </fieldset>
         <textarea id="text">toki pona</textarea>
         <button id="go" onclick="draw()">go</button>
@@ -44,11 +64,17 @@
                     ctx.shadowColor = "rgba(0,0,0,0.3)";
                     ctx.shadowBlur = 4;
                 };
-                if (document.getElementById('stroke').checked){
-                    ctx.strokeStyle = 'white';
+
+                const strokeColour = document.getElementById('strokeColour');
+
+                if (strokeColour.value !== 'none'){
+                    ctx.strokeStyle = strokeColour.value;
                     ctx.lineWidth = 2;
                     ctx.strokeText(text.value, 0, 48);
                 };
+                
+                const fontColour = document.getElementById('fontColour');
+                ctx.fillStyle = fontColour.value;
                 ctx.fillText(text.value, 0,48);
             }
         </script>
