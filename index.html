@@ -23,6 +23,7 @@
 
                 <select id="fontColour1">
                     <option value="black" >black</option>
+                    <option value="none">none</option>
                     <option value="red">red</option>
                     <option value="blue">blue</option>
                     <option value="purple">purple</option>
@@ -171,18 +172,20 @@
                     ctx.fillStyle = gradient;
                 } else {
                     ctx.fillStyle = fontColour1;
-                }
+                };
                 
                 const glow = document.getElementById('glow').checked;
-                console.log(glow);
                 if (glow) {
                     ctx.lineWidth = 3;
                     ctx.strokeText(text.value, 0, 48);
                     ctx.filter = "blur(5px)";
                     ctx.filter = "none";
-                }
+                };
+                
+                if (fontColour1 !== 'none') {
+                    ctx.fillText(text.value, 0,48);
+                };
 
-                ctx.fillText(text.value, 0,48);
                 const image = document.getElementById('image');
                 image.src = canvas.toDataURL();
             }
