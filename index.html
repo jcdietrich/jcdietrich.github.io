@@ -65,6 +65,7 @@
         <textarea id="text">toki pona</textarea>
         <button id="go" onclick="draw()">go</button>
         <canvas id="canvas"></canvas>
+        <img id='image'/>
         <p>
         <a href="linja-sike-beta-2-for-u.otf">font</a> created by: lipamanka#6684 (on discord)
         </p>
@@ -86,7 +87,7 @@
                 ctx.fillText(text.value, 0,48);
                 metrics = ctx.measureText(text.value);
                 canvas.width = metrics.width + 10;
-                canvas.height = 75;
+                canvas.height = 65;
                 ctx.font = '48px linjasike';
 
                 if (document.getElementById('shadow').checked) {
@@ -124,6 +125,8 @@
                 }
 
                 ctx.fillText(text.value, 0,48);
+                const image = document.getElementById('image');
+                image.src = canvas.toDataURL();
             }
         </script>
     </body>
