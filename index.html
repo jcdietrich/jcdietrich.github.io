@@ -15,6 +15,8 @@
             </br>
             <label><input id="shadow" type="checkbox" />drop shadow</label>
             </br>
+            <label><input id="glow" type="checkbox" />glow</label>
+            </br>
             </br>
             <fieldset>
                 <legend>font colours</legend>
@@ -23,6 +25,7 @@
                     <option value="black" >black</option>
                     <option value="red">red</option>
                     <option value="blue">blue</option>
+                    <option value="purple">purple</option>
                     <option value="yellow">yellow</option>
                     <option value="orange">orange</option>
                     <option value="white">white</option>
@@ -33,6 +36,7 @@
                     <option value="black" >black</option>
                     <option value="red">red</option>
                     <option value="blue">blue</option>
+                    <option value="purple">purple</option>
                     <option value="yellow">yellow</option>
                     <option value="orange">orange</option>
                     <option value="white">white</option>
@@ -43,24 +47,50 @@
                     <option value="black" >black</option>
                     <option value="red">red</option>
                     <option value="blue">blue</option>
+                    <option value="purple">purple</option>
                     <option value="yellow">yellow</option>
                     <option value="orange">orange</option>
                     <option value="white">white</option>
                 </select>
                 <label>
             </fieldset>
-            <label>
-                <select id="strokeColour">
+            <fieldset>
+                <legend>stroke colours</legend>
+
+                <select id="strokeColour1">
                     <option value="none">none</option>
+                    <option value="black" >black</option>
                     <option value="red">red</option>
                     <option value="blue">blue</option>
+                    <option value="purple">purple</option>
                     <option value="yellow">yellow</option>
                     <option value="orange">orange</option>
-                    <option value="black">black</option>
                     <option value="white">white</option>
                 </select>
-                font outline colour
-            </label>
+                
+                <select id="strokeColour2">
+                    <option value="none">none</option>
+                    <option value="black" >black</option>
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                    <option value="purple">purple</option>
+                    <option value="yellow">yellow</option>
+                    <option value="orange">orange</option>
+                    <option value="white">white</option>
+                </select>
+
+                <select id="strokeColour3">
+                    <option value="none">none</option>
+                    <option value="black" >black</option>
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                    <option value="purple">purple</option>
+                    <option value="yellow">yellow</option>
+                    <option value="orange">orange</option>
+                    <option value="white">white</option>
+                </select>
+                <label>
+            </fieldset>
         </fieldset>
         <textarea id="text">toki pona</textarea>
         <button id="go" onclick="draw()">go</button>
@@ -99,12 +129,31 @@
 
                 const strokeColour = document.getElementById('strokeColour');
 
-                if (strokeColour.value !== 'none'){
-                    ctx.strokeStyle = strokeColour.value;
+
+                const strokeColour1 = document.getElementById('strokeColour1').value;
+                const strokeColour2 = document.getElementById('strokeColour2').value;
+                const strokeColour3 = document.getElementById('strokeColour3').value;
+                const gradient1 = ctx.createLinearGradient(0, 0, canvas.width, 0);
+
+                if (strokeColour2 !== 'none') {
+                    if (strokeColour3 != 'none') {
+                        gradient1.addColorStop("0", strokeColour1);
+                        gradient1.addColorStop("0.5", strokeColour2);
+                        gradient1.addColorStop("1.0", strokeColour3);
+                    } else {
+                        gradient1.addColorStop("0", strokeColour1);
+                        gradient1.addColorStop("1.0", strokeColour2);
+                    };
+                    ctx.strokeStyle = gradient1;
+                } else {
+                    ctx.strokeStyle = fontColour1;
+                }
+                
+                if (strokeColour1 !== 'none'){
                     ctx.lineWidth = 1;
                     ctx.strokeText(text.value, 0, 48);
                 };
-                
+
                 const fontColour1 = document.getElementById('fontColour1').value;
                 const fontColour2 = document.getElementById('fontColour2').value;
                 const fontColour3 = document.getElementById('fontColour3').value;
@@ -122,6 +171,15 @@
                     ctx.fillStyle = gradient;
                 } else {
                     ctx.fillStyle = fontColour1;
+                }
+                
+                const glow = document.getElementById('glow').checked;
+                console.log(glow);
+                if (glow) {
+                    ctx.lineWidth = 3;
+                    ctx.strokeText(text.value, 0, 48);
+                    ctx.filter = "blur(5px)";
+                    ctx.filter = "none";
                 }
 
                 ctx.fillText(text.value, 0,48);
