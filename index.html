@@ -15,17 +15,40 @@
             </br>
             <label><input id="shadow" type="checkbox" />drop shadow</label>
             </br>
-            <label>
-                <select id="fontColour">
+            </br>
+            <fieldset>
+                <legend>font colours</legend>
+
+                <select id="fontColour1">
                     <option value="black" >black</option>
                     <option value="red">red</option>
                     <option value="blue">blue</option>
                     <option value="yellow">yellow</option>
                     <option value="orange">orange</option>
+                    <option value="white">white</option>
                 </select>
-                font colour
-            </label>
-            </br>
+                
+                <select id="fontColour2">
+                    <option value="none">none</option>
+                    <option value="black" >black</option>
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                    <option value="yellow">yellow</option>
+                    <option value="orange">orange</option>
+                    <option value="white">white</option>
+                </select>
+
+                <select id="fontColour3">
+                    <option value="none">none</option>
+                    <option value="black" >black</option>
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                    <option value="yellow">yellow</option>
+                    <option value="orange">orange</option>
+                    <option value="white">white</option>
+                </select>
+                <label>
+            </fieldset>
             <label>
                 <select id="strokeColour">
                     <option value="none">none</option>
@@ -34,6 +57,7 @@
                     <option value="yellow">yellow</option>
                     <option value="orange">orange</option>
                     <option value="black">black</option>
+                    <option value="white">white</option>
                 </select>
                 font outline colour
             </label>
@@ -64,6 +88,7 @@
                 canvas.width = metrics.width + 10;
                 canvas.height = 75;
                 ctx.font = '48px linjasike';
+
                 if (document.getElementById('shadow').checked) {
                     ctx.shadowOffsetX = 3;
                     ctx.shadowOffsetY = 3;
@@ -79,8 +104,25 @@
                     ctx.strokeText(text.value, 0, 48);
                 };
                 
-                const fontColour = document.getElementById('fontColour');
-                ctx.fillStyle = fontColour.value;
+                const fontColour1 = document.getElementById('fontColour1').value;
+                const fontColour2 = document.getElementById('fontColour2').value;
+                const fontColour3 = document.getElementById('fontColour3').value;
+                const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+
+                if (fontColour2 !== 'none') {
+                    if (fontColour3 != 'none') {
+                        gradient.addColorStop("0", fontColour1);
+                        gradient.addColorStop("0.5", fontColour2);
+                        gradient.addColorStop("1.0", fontColour3);
+                    } else {
+                        gradient.addColorStop("0", fontColour1);
+                        gradient.addColorStop("1.0", fontColour2);
+                    };
+                    ctx.fillStyle = gradient;
+                } else {
+                    ctx.fillStyle = fontColour1;
+                }
+
                 ctx.fillText(text.value, 0,48);
             }
         </script>
