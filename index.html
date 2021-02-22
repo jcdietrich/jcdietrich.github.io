@@ -101,6 +101,7 @@
         <a href="linja-sike-beta-2-for-u.otf">font</a> created by: lipamanka#6684 (on discord)
         </p>
         <script>
+            const yOffset = 50;
             const text = document.getElementById('text');
             const canvas = document.getElementById('canvas');
             const setPreview = preview => {
@@ -114,12 +115,12 @@
             const draw = () => {
                 ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.font = '48px linjasike';
-                ctx.fillText(text.value, 0,48);
+                ctx.font = '56px linjasike';
+                ctx.fillText(text.value, 0, yOffset);
                 metrics = ctx.measureText(text.value);
-                canvas.width = metrics.width + 10;
+                canvas.width = metrics.width + 7;
                 canvas.height = 65;
-                ctx.font = '48px linjasike';
+                ctx.font = '56px linjasike';
 
                 if (document.getElementById('shadow').checked) {
                     ctx.shadowOffsetX = 3;
@@ -152,7 +153,7 @@
                 
                 if (strokeColour1 !== 'none'){
                     ctx.lineWidth = 1;
-                    ctx.strokeText(text.value, 0, 48);
+                    ctx.strokeText(text.value, 0, yOffset);
                 };
 
                 const fontColour1 = document.getElementById('fontColour1').value;
@@ -177,13 +178,13 @@
                 const glow = document.getElementById('glow').checked;
                 if (glow) {
                     ctx.lineWidth = 3;
-                    ctx.strokeText(text.value, 0, 48);
+                    ctx.strokeText(text.value, 0, yOffset);
                     ctx.filter = "blur(5px)";
                     ctx.filter = "none";
                 };
                 
                 if (fontColour1 !== 'none') {
-                    ctx.fillText(text.value, 0,48);
+                    ctx.fillText(text.value, 0, yOffset);
                 };
 
                 const image = document.getElementById('image');
