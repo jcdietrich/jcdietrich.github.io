@@ -99,7 +99,7 @@
                 <label>
             </fieldset>
         </fieldset>
-        <textarea id="text"></textarea>
+        <textarea id="text" spellcheck="false"></textarea>
         <button id="go" onclick="draw()">go</button>
         <canvas id="canvas"></canvas>
         <img id='image'/>
@@ -111,7 +111,7 @@
             const text = document.getElementById('text');
             const canvas = document.getElementById('canvas');
             
-            text.value = window.location.hash.substr(1);
+            text.value = decodeURI(window.location.hash.substr(1));
 
             const setPreview = preview => {
                 if (preview.checked){
@@ -122,7 +122,7 @@
             };
 
             const draw = () => {
-                window.location.hash = text.value;
+                window.location.hash = encodeURI(text.value);
                 ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.font = '56px linjasike';
