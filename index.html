@@ -18,6 +18,11 @@
             <label><input id="glow" type="checkbox" />glow</label>
             </br>
             </br>
+            <label>
+                <input id="fontsize" type="number" value="56"></input>
+                font size
+            </label>
+            </br>
             <fieldset>
                 <legend>font colours</legend>
 
@@ -58,6 +63,12 @@
                 </select>
                 <label>
             </fieldset>
+            </br>
+            <label>
+                <input id="strokesize" type="number" value="1"></input>
+                stroke size
+            </label>
+            </br>
             <fieldset>
                 <legend>stroke colours</legend>
 
@@ -98,10 +109,6 @@
                 </select>
                 <label>
             </fieldset>
-            <label>
-                <input id="fontsize" type="number" value="56"></input>
-                font size
-            </label>
         </fieldset>
         <textarea id="text" spellcheck="false"></textarea>
         <button id="go" onclick="draw()">go</button>
@@ -127,6 +134,7 @@
             const draw = () => {
                 window.location.hash = encodeURI(text.value);
                 const fontsize = document.getElementById('fontsize').value;
+                const stroke = document.getElementById('strokesize').value;
                 const yOffset = fontsize;
                 ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -168,7 +176,7 @@
                 }
                 
                 if (strokeColour1 !== 'none'){
-                    ctx.lineWidth = 1;
+                    ctx.lineWidth = stroke;
                     ctx.strokeText(text.value, Math.floor(metrics.width/8), yOffset - metrics.fontBoundingBoxDescent + 5);
                 };
 
@@ -193,9 +201,10 @@
                 
                 const glow = document.getElementById('glow').checked;
                 if (glow) {
-                    ctx.lineWidth = 3;
+                    ctx.globalAlpha = 0.5;
+                    ctx.lineWidth = stroke;
                     ctx.strokeText(text.value, Math.floor(metrics.width/8), yOffset - metrics.fontBoundingBoxDescent + 5);
-                    ctx.filter = "blur(5px)";
+                    ctx.filter = `blur(${stroke+2}px)`;
                     ctx.filter = "none";
                 };
                 
