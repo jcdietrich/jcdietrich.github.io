@@ -82,6 +82,7 @@
                     <option value="yellow">yellow</option>
                     <option value="orange">orange</option>
                     <option value="white">white</option>
+                    <option value="pattern">pattern</option>
                 </select>
                 
                 <select id="strokeColour2">
@@ -107,9 +108,8 @@
                     <option value="orange">orange</option>
                     <option value="white">white</option>
                 </select>
-                <label>
+                </label>
             </fieldset>
-        </fieldset>
         <textarea id="text" spellcheck="false"></textarea>
         <button id="go" onclick="draw()">go</button>
         <canvas id="canvas"></canvas>
@@ -135,16 +135,15 @@
                 window.location.hash = encodeURI(text.value);
                 const fontsize = document.getElementById('fontsize').value;
                 const stroke = document.getElementById('strokesize').value;
-                const yOffset = fontsize;
                 ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.font = `${fontsize}px linjasike`;
-                ctx.fillText(text.value, 0, yOffset);
+                ctx.fillText(text.value, 0, fontsize);
                 metrics = ctx.measureText(text.value);
                 canvas.width = metrics.width + Math.floor(metrics.width/4); 
-                console.log(metrics);
-                canvas.height = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent + 10;
+                canvas.height = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent + 10 + parseInt(stroke);
                 ctx.font = `${fontsize}px linjasike`;
+                const yOffset = fontsize - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) + 5;
 
                 if (document.getElementById('shadow').checked) {
                     ctx.shadowOffsetX = 3;
@@ -174,11 +173,21 @@
                 } else {
                     ctx.strokeStyle = strokeColour1;
                 }
-                
+
                 if (strokeColour1 !== 'none'){
                     ctx.lineWidth = stroke;
-                    ctx.strokeText(text.value, Math.floor(metrics.width/8), yOffset - metrics.fontBoundingBoxDescent + 5);
+                    ctx.strokeText(text.value, Math.floor(metrics.width/8), yOffset);
                 };
+
+                const glow = document.getElementById('glow').checked;
+                if (glow) {
+                    ctx.globalAlpha = 0.5;
+                    ctx.lineWidth = stroke;
+                    ctx.filter = `blur(${stroke+2}px)`;
+                    ctx.strokeText(text.value, Math.floor(metrics.width/8), yOffset);
+                    ctx.filter = "none";
+                };
+                
 
                 const fontColour1 = document.getElementById('fontColour1').value;
                 const fontColour2 = document.getElementById('fontColour2').value;
@@ -198,18 +207,10 @@
                 } else {
                     ctx.fillStyle = fontColour1;
                 };
-                
-                const glow = document.getElementById('glow').checked;
-                if (glow) {
-                    ctx.globalAlpha = 0.5;
-                    ctx.lineWidth = stroke;
-                    ctx.strokeText(text.value, Math.floor(metrics.width/8), yOffset - metrics.fontBoundingBoxDescent + 5);
-                    ctx.filter = `blur(${stroke+2}px)`;
-                    ctx.filter = "none";
-                };
-                
+
+
                 if (fontColour1 !== 'none') {
-                    ctx.fillText(text.value, Math.floor(metrics.width/8), yOffset - metrics.fontBoundingBoxDescent + 5);
+                    ctx.fillText(text.value, Math.floor(metrics.width/8), yOffset);
                 };
 
                 const image = document.getElementById('image');
