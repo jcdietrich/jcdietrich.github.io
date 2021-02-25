@@ -98,6 +98,10 @@
                 </select>
                 <label>
             </fieldset>
+            <label>
+                <input id="fontsize" type="number" value="56"></input>
+                font size
+            </label>
         </fieldset>
         <textarea id="text" spellcheck="false"></textarea>
         <button id="go" onclick="draw()">go</button>
@@ -107,7 +111,6 @@
         <a href="linja-sike-beta-2-for-u.otf">font</a> created by: lipamanka#6684 (on discord)
         </p>
         <script>
-            const yOffset = 50;
             const text = document.getElementById('text');
             const canvas = document.getElementById('canvas');
             
@@ -123,14 +126,17 @@
 
             const draw = () => {
                 window.location.hash = encodeURI(text.value);
+                const fontsize = document.getElementById('fontsize').value;
+                const yOffset = fontsize;
                 ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.font = '56px linjasike';
+                ctx.font = `${fontsize}px linjasike`;
                 ctx.fillText(text.value, 0, yOffset);
                 metrics = ctx.measureText(text.value);
-                canvas.width = metrics.width + 7;
-                canvas.height = 65;
-                ctx.font = '56px linjasike';
+                canvas.width = metrics.width + Math.floor(metrics.width/4); 
+                console.log(metrics);
+                canvas.height = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent + 10;
+                ctx.font = `${fontsize}px linjasike`;
 
                 if (document.getElementById('shadow').checked) {
                     ctx.shadowOffsetX = 3;
@@ -163,7 +169,7 @@
                 
                 if (strokeColour1 !== 'none'){
                     ctx.lineWidth = 1;
-                    ctx.strokeText(text.value, 0, yOffset);
+                    ctx.strokeText(text.value, Math.floor(metrics.width/8), yOffset - metrics.fontBoundingBoxDescent + 5);
                 };
 
                 const fontColour1 = document.getElementById('fontColour1').value;
@@ -188,13 +194,13 @@
                 const glow = document.getElementById('glow').checked;
                 if (glow) {
                     ctx.lineWidth = 3;
-                    ctx.strokeText(text.value, 0, yOffset);
+                    ctx.strokeText(text.value, Math.floor(metrics.width/8), yOffset - metrics.fontBoundingBoxDescent + 5);
                     ctx.filter = "blur(5px)";
                     ctx.filter = "none";
                 };
                 
                 if (fontColour1 !== 'none') {
-                    ctx.fillText(text.value, 0, yOffset);
+                    ctx.fillText(text.value, Math.floor(metrics.width/8), yOffset - metrics.fontBoundingBoxDescent + 5);
                 };
 
                 const image = document.getElementById('image');
