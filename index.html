@@ -5,8 +5,17 @@
             #text {font-size:400%; font-family: linjasike;}
             #canvas {border-style: dashed;}
         </style>
+        <script>
+                   </script>
     </head>
     <body>
+        <fieldset style="float:right;">
+            <label>word lookup</label>
+            <input type="text" id="word"></input>
+            <label><input type="checkbox" id="phrases"></input>include phrases</label>
+            <button onclick="search(document.getElementById('word').value)">go</button>
+            <ul id="definitions"/>
+        </fieldset>
         <fieldset>
             <label>
                 <input id="preview" type="checkbox" spellcheck="false" onclick="setPreview(this);" checked="true" />
@@ -217,6 +226,32 @@
                 image.src = canvas.toDataURL();
             }
             window.onload = draw;
+
+            var dictionary;
+            fetch("toki-pona-lessons_en.json")
+                .then(res => res.json())
+                .then(data => dictionary = data);
+
+            search = (query) => {
+                const oldListings = document.getElementById('definitions');
+                const listings = oldListings.cloneNode(false);
+                oldListings.parentNode.replaceChild(listings, oldListings);
+                const phrases = document.getElementById('phrases').checked;
+                if (query !== ''){
+                    for (word of dictionary.words) {
+                        if(word.entry.form.split(' ').includes(query) 
+                            || word.translations[0].forms[0].replace(/[,()!?']/g,'').split(' ').includes(query)){
+                            if(!(word.translations[0].title === 'phrase' && !phrases)){
+                                const li = document.createElement('li');
+                                const text = document.createTextNode(
+`${word.entry.form}: (${word.translations[0].title}) ${word.translations[0].forms[0]}`);
+                                li.appendChild(text);
+                                listings.appendChild(li);
+                            }
+                        }
+                    }
+                }
+            }
         </script>
     </body>
 </html>
