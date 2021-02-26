@@ -12,7 +12,7 @@
         <fieldset style="float:right;">
             <label>word lookup</label>
             <input type="text" id="word"></input>
-            <label><input type="checkbox" id="phrases"></input>include phrases</label>
+            <label><input type="checkbox" id="phrases" checked="checked"></input>include phrases</label>
             <button onclick="search(document.getElementById('word').value)">go</button>
             <ul id="definitions"/>
         </fieldset>
@@ -237,12 +237,12 @@
                 const listings = oldListings.cloneNode(false);
                 oldListings.parentNode.replaceChild(listings, oldListings);
                 const phrases = document.getElementById('phrases').checked;
-                if (query !== ''){
+                if (query !== ""){
                     for (word of dictionary.words) {
-                        if(word.entry.form.split(' ').includes(query) 
-                            || word.translations[0].forms[0].replace(/[,()!?']/g,'').split(' ').includes(query)){
-                            if(!(word.translations[0].title === 'phrase' && !phrases)){
-                                const li = document.createElement('li');
+                        if(word.entry.form.split(" ").includes(query) 
+                            || word.translations[0].forms[0].replace(/[,()!?']/g,'').split(" ").includes(query)){
+                            if(!(word.translations[0].title === "phrase" && !phrases)){
+                                const li = document.createElement("li");
                                 const text = document.createTextNode(
 `${word.entry.form}: (${word.translations[0].title}) ${word.translations[0].forms[0]}`);
                                 li.appendChild(text);
@@ -252,6 +252,13 @@
                     }
                 }
             }
+
+            const wordbox = document.getElementById("word");
+            wordbox.addEventListener("keydown", ({key}) => {
+                if (key === "Enter"){
+                    search(document.getElementById("word").value);
+                }
+            });
         </script>
     </body>
 </html>
