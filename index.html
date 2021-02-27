@@ -11,7 +11,7 @@
     <body>
         <fieldset style="float:right;">
             <label>word lookup</label>
-            <input type="text" id="word"></input>
+            <input type="text" id="word" autocorrect="off" autocapitalize="none"></input>
             <label><input type="checkbox" id="phrases" checked="checked"></input>include phrases</label>
             <button onclick="search(document.getElementById('word').value)">go</button>
             <ul id="definitions"/>
@@ -119,7 +119,7 @@
                 </select>
                 </label>
             </fieldset>
-        <textarea id="text" spellcheck="false"></textarea>
+        <textarea id="text" spellcheck="false" autocorrect="off" autocapitalize="none"></textarea>
         <button id="go" onclick="draw()">go</button>
         <canvas id="canvas"></canvas>
         <img id='image'/>
