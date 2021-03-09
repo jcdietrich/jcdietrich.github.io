@@ -144,82 +144,93 @@
                 window.location.hash = encodeURI(text.value);
                 const fontsize = document.getElementById('fontsize').value;
                 const stroke = document.getElementById('strokesize').value;
+                const lines = text.value.split('\n')
+                const longestLine = [...lines].sort((a,b) => {
+                    if (a.length < b.length) {
+                        return 1;
+                    }
+                        return -1;
+                })[0];
                 ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.font = `${fontsize}px linjasike`;
-                ctx.fillText(text.value, 0, fontsize);
-                metrics = ctx.measureText(text.value);
+                ctx.fillText(longestLine, 0, fontsize);
+                metrics = ctx.measureText(longestLine);
                 canvas.width = metrics.width + Math.floor(metrics.width/4); 
-                canvas.height = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent + 10 + parseInt(stroke);
+                canvas.height = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent + 10 + parseInt(stroke) + (lines.length -1) * fontsize;
                 ctx.font = `${fontsize}px linjasike`;
-                const yOffset = fontsize - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) + 5;
+                var lineOffset = 0;
+                for (line of lines) {
+                    const yOffset = fontsize - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) + 5 - lineOffset;
 
-                if (document.getElementById('shadow').checked) {
-                    ctx.shadowOffsetX = 3;
-                    ctx.shadowOffsetY = 3;
-                    ctx.shadowColor = "rgba(0,0,0,0.3)";
-                    ctx.shadowBlur = 4;
-                };
-
-                const strokeColour = document.getElementById('strokeColour');
-
-
-                const strokeColour1 = document.getElementById('strokeColour1').value;
-                const strokeColour2 = document.getElementById('strokeColour2').value;
-                const strokeColour3 = document.getElementById('strokeColour3').value;
-                const gradient1 = ctx.createLinearGradient(0, 0, canvas.width, 0);
-
-                if (strokeColour2 !== 'none') {
-                    if (strokeColour3 != 'none') {
-                        gradient1.addColorStop("0", strokeColour1);
-                        gradient1.addColorStop("0.5", strokeColour2);
-                        gradient1.addColorStop("1.0", strokeColour3);
-                    } else {
-                        gradient1.addColorStop("0", strokeColour1);
-                        gradient1.addColorStop("1.0", strokeColour2);
+                    if (document.getElementById('shadow').checked) {
+                        ctx.shadowOffsetX = 3;
+                        ctx.shadowOffsetY = 3;
+                        ctx.shadowColor = "rgba(0,0,0,0.3)";
+                        ctx.shadowBlur = 4;
                     };
-                    ctx.strokeStyle = gradient1;
-                } else {
-                    ctx.strokeStyle = strokeColour1;
-                }
 
-                if (strokeColour1 !== 'none'){
-                    ctx.lineWidth = stroke;
-                    ctx.strokeText(text.value, Math.floor(metrics.width/8), yOffset);
-                };
+                    const strokeColour = document.getElementById('strokeColour');
 
-                const glow = document.getElementById('glow').checked;
-                if (glow) {
-                    ctx.globalAlpha = 0.5;
-                    ctx.lineWidth = stroke;
-                    ctx.filter = `blur(${stroke+2}px)`;
-                    ctx.strokeText(text.value, Math.floor(metrics.width/8), yOffset);
-                    ctx.filter = "none";
-                };
-                
 
-                const fontColour1 = document.getElementById('fontColour1').value;
-                const fontColour2 = document.getElementById('fontColour2').value;
-                const fontColour3 = document.getElementById('fontColour3').value;
-                const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                    const strokeColour1 = document.getElementById('strokeColour1').value;
+                    const strokeColour2 = document.getElementById('strokeColour2').value;
+                    const strokeColour3 = document.getElementById('strokeColour3').value;
+                    const gradient1 = ctx.createLinearGradient(0, 0, canvas.width, 0);
 
-                if (fontColour2 !== 'none') {
-                    if (fontColour3 != 'none') {
-                        gradient.addColorStop("0", fontColour1);
-                        gradient.addColorStop("0.5", fontColour2);
-                        gradient.addColorStop("1.0", fontColour3);
+                    if (strokeColour2 !== 'none') {
+                        if (strokeColour3 != 'none') {
+                            gradient1.addColorStop("0", strokeColour1);
+                            gradient1.addColorStop("0.5", strokeColour2);
+                            gradient1.addColorStop("1.0", strokeColour3);
+                        } else {
+                            gradient1.addColorStop("0", strokeColour1);
+                            gradient1.addColorStop("1.0", strokeColour2);
+                        };
+                        ctx.strokeStyle = gradient1;
                     } else {
-                        gradient.addColorStop("0", fontColour1);
-                        gradient.addColorStop("1.0", fontColour2);
+                        ctx.strokeStyle = strokeColour1;
+                    }
+
+                    if (strokeColour1 !== 'none'){
+                        ctx.lineWidth = stroke;
+                        ctx.strokeText(line, Math.floor(metrics.width/8), yOffset);
                     };
-                    ctx.fillStyle = gradient;
-                } else {
-                    ctx.fillStyle = fontColour1;
-                };
+
+                    const glow = document.getElementById('glow').checked;
+                    if (glow) {
+                        ctx.globalAlpha = 0.5;
+                        ctx.lineWidth = stroke;
+                        ctx.filter = `blur(${stroke+2}px)`;
+                        ctx.strokeText(line, Math.floor(metrics.width/8), yOffset);
+                        ctx.filter = "none";
+                    };
 
 
-                if (fontColour1 !== 'none') {
-                    ctx.fillText(text.value, Math.floor(metrics.width/8), yOffset);
+                    const fontColour1 = document.getElementById('fontColour1').value;
+                    const fontColour2 = document.getElementById('fontColour2').value;
+                    const fontColour3 = document.getElementById('fontColour3').value;
+                    const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+
+                    if (fontColour2 !== 'none') {
+                        if (fontColour3 != 'none') {
+                            gradient.addColorStop("0", fontColour1);
+                            gradient.addColorStop("0.5", fontColour2);
+                            gradient.addColorStop("1.0", fontColour3);
+                        } else {
+                            gradient.addColorStop("0", fontColour1);
+                            gradient.addColorStop("1.0", fontColour2);
+                        };
+                        ctx.fillStyle = gradient;
+                    } else {
+                        ctx.fillStyle = fontColour1;
+                    };
+
+
+                    if (fontColour1 !== 'none') {
+                        ctx.fillText(line, Math.floor(metrics.width/8), yOffset);
+                    };
+                    lineOffset = parseInt(lineOffset) - parseInt(fontsize);
                 };
 
                 const image = document.getElementById('image');
