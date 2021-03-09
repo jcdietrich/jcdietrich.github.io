@@ -151,12 +151,11 @@
                 const metrics = ctx.measureText('[');
                 canvas.width = lines.reduce((len, line) => {
                     ctx.fillText(line, 0, fontsize);
-                    info = ctx.measureText(line);
+                    const info = ctx.measureText(line);
 
-                    lineWidth = info.width + Math.floor(info.width/8);
-
+                    const lineWidth = info.width + Math.floor(info.width/8)+ Math.floor(fontsize/2);
                     if (lineWidth > len){
-                       len = lineWidth;
+                       return lineWidth;
                     };
 
                     return len;
