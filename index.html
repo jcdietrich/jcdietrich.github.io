@@ -255,8 +255,8 @@
                 const phrases = document.getElementById('phrases').checked;
                 if (query !== ""){
                     for (word of dictionary.words) {
-                        if(word.entry.form.split(" ").includes(query) 
-                            || word.translations[0].forms[0].replace(/[,()!?']/g,'').split(" ").includes(query)){
+                        if(word.entry.form.toLowerCase().split(" ").includes(query.toLowerCase())
+                            || word.translations[0].forms[0].toLowerCase().replace(/[,()!?']/g,'').split(" ").includes(query.toLowerCase())){
                             if(!(word.translations[0].title === "phrase" && !phrases)){
                                 const li = document.createElement("li");
                                 const text = document.createTextNode(
