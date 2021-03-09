@@ -145,24 +145,29 @@
                 const fontsize = document.getElementById('fontsize').value;
                 const stroke = document.getElementById('strokesize').value;
                 const lines = text.value.split('\n')
-                const longestLine = [...lines].sort((a,b) => {
-                    if (a.length < b.length) {
-                        return 1;
-                    }
-                        return -1;
-                })[0];
                 ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.font = `${fontsize}px linjasike`;
-                ctx.fillText(longestLine, 0, fontsize);
-                metrics = ctx.measureText(longestLine);
-                canvas.width = metrics.width + Math.floor(metrics.width/4); 
-                canvas.height = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent + 10 + parseInt(stroke) + (lines.length -1) * fontsize;
+                const metrics = ctx.measureText('[');
+                canvas.width = lines.reduce((len, line) => {
+                    ctx.fillText(line, 0, fontsize);
+                    info = ctx.measureText(line);
+
+                    lineWidth = info.width + Math.floor(info.width/8);
+
+                    if (lineWidth > len){
+                       len = lineWidth;
+                    };
+
+                    return len;
+                }, 0);
+
+                canvas.height = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent + 20 + parseInt(stroke) + (lines.length -1) * fontsize;
                 ctx.font = `${fontsize}px linjasike`;
                 var lineOffset = 0;
                 for (line of lines) {
-                    const yOffset = fontsize - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) + 5 - lineOffset;
-
+                    const yOffset = fontsize - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) - lineOffset;
+                    const xOffset = Math.floor(fontsize/2);
                     if (document.getElementById('shadow').checked) {
                         ctx.shadowOffsetX = 3;
                         ctx.shadowOffsetY = 3;
@@ -194,7 +199,7 @@
 
                     if (strokeColour1 !== 'none'){
                         ctx.lineWidth = stroke;
-                        ctx.strokeText(line, Math.floor(metrics.width/8), yOffset);
+                        ctx.strokeText(line, xOffset, yOffset);
                     };
 
                     const glow = document.getElementById('glow').checked;
@@ -202,7 +207,7 @@
                         ctx.globalAlpha = 0.5;
                         ctx.lineWidth = stroke;
                         ctx.filter = `blur(${stroke+2}px)`;
-                        ctx.strokeText(line, Math.floor(metrics.width/8), yOffset);
+                        ctx.strokeText(line, xOffset, yOffset);
                         ctx.filter = "none";
                     };
 
@@ -228,9 +233,9 @@
 
 
                     if (fontColour1 !== 'none') {
-                        ctx.fillText(line, Math.floor(metrics.width/8), yOffset);
+                        ctx.fillText(line, xOffset, yOffset);
                     };
-                    lineOffset = parseInt(lineOffset) - parseInt(fontsize);
+                    lineOffset = parseInt(lineOffset) - parseInt(fontsize) -  Math.floor(stroke/2) ;
                 };
 
                 const image = document.getElementById('image');
