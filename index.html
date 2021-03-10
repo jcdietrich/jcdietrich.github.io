@@ -208,12 +208,15 @@
                 </select>
                     <button id="fgc" onClick="addToFill()">add to fill gradient</button>
                     <button id="sgc" onClick="addToStroke()">add to stroke gradient</button>
+                    <button id="sgc" onClick="addToBack()">add to background gradient</button>
                     </br>
                     <button id="fgc" onClick="resetFill()">reset fill gradient</button>
                     <button id="sgc" onClick="resetStroke()">reset stroke gradient</button>
+                    <button id="sgc" onClick="resetBack()">reset background gradient</button>
                     </br>
                     <div>Fill Colors:<span id="fillColours"></span></div>
                     <div>Stroke Colors:<span id="strokeColours"></span></div>
+                    <div>Background Colors:<span id="backColours"></span></div>
             </fieldset>
             </br>
         <textarea id="text" spellcheck="false" autocorrect="off" autocapitalize="none" rows=5></textarea>
@@ -229,6 +232,7 @@
            
             let strokeColours = [];
             let fillColours = [];
+            let backColours = [];
 
             text.value = decodeURI(window.location.hash.substr(1));
 
@@ -262,6 +266,33 @@
                 }, 0);
 
                 canvas.height = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent + 20 + parseInt(stroke) + (lines.length -1) * fontsize;
+
+                
+                const numBack = backColours.length;
+                const gradient2 = ctx.createLinearGradient(0, 0, canvas.width, 0);
+
+                if (numBack === 1){
+                    ctx.fillStyle = backColours[0];
+                } else if(numBack >= 2) {
+                    gradient2.addColorStop("0", backColours[0]);
+                    gradient2.addColorStop("1.0", backColours[numBack-1]);
+
+                    numInner = numBack - 2;
+                    if (numInner >0){
+                        const gradIncr = 1/ (numInner +1);
+                        let currentIncr = gradIncr;
+                        for (let i = 0; i <= numInner; i++){
+                            gradient2.addColorStop(currentIncr, backColours[i+1]);
+                            currentIncr += gradIncr;
+                        }
+                    }
+                    ctx.fillStyle = gradient2;
+                };
+
+                if (numBack > 0){
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                };
+                
                 ctx.font = `${fontsize}px linjasike`;
                 var lineOffset = 0;
                 for (line of lines) {
@@ -387,6 +418,12 @@
                 draw();
             }
 
+            const addToBack = () => {
+               backColours.push(document.getElementById('fontColour1').value);
+                document.getElementById('backColours').innerHTML = backColours;
+                draw();
+            }
+
             const resetFill = () => {
                fillColours = [];
                 document.getElementById('fillColours').innerHTML = fillColours;
@@ -396,6 +433,12 @@
             const resetStroke = () => {
                 strokeColours = [];
                 document.getElementById('strokeColours').innerHTML = strokeColours;
+                draw();
+            }
+
+            const resetBack = () => {
+                backColours = [];
+                document.getElementById('backColours').innerHTML = backColours;
                 draw();
             }
         </script>
