@@ -253,7 +253,7 @@
                     ctx.fillText(line, 0, fontsize);
                     const info = ctx.measureText(line);
 
-                    const lineWidth = info.width + Math.floor(info.width/4)+ Math.floor(fontsize/2);
+                    const lineWidth = info.width + Math.floor(fontsize/2) +10;
                     if (lineWidth > len){
                        return lineWidth;
                     };
@@ -379,21 +379,25 @@
             const addToStroke = () => {
                strokeColours.push(document.getElementById('fontColour1').value);
                 document.getElementById('strokeColours').innerHTML = strokeColours;
+                draw();
             }
 
             const addToFill = () => {
                fillColours.push(document.getElementById('fontColour1').value);
                 document.getElementById('fillColours').innerHTML = fillColours;
+                draw();
             }
 
             const resetFill = () => {
                fillColours = [];
                 document.getElementById('fillColours').innerHTML = fillColours;
+                draw();
             }
 
             const resetStroke = () => {
                 strokeColours = [];
                 document.getElementById('strokeColours').innerHTML = strokeColours;
+                draw();
             }
         </script>
     </body>
