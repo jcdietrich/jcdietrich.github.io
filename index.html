@@ -2,6 +2,10 @@
     <head>
         <style>
             @font-face {font-family: linjasike; src: url(linja-sike-beta-2-for-u.otf)}
+            @font-face {font-family: linjasuwi; src: url(linjasuwi.otf)}
+            @font-face {font-family: pulukin; src: url(PuLukin.otf)}
+            @font-face {font-family: linjapona; src: url(linja-pona-4.2.otf)}
+            @font-face {font-family: sitelenponapona; src: url(sitelen-pona-pona.otf)}
             #text {font-size:200%; font-family: linjasike;width:100%;}
             #canvas {border-style: dashed;}
         </style>
@@ -18,8 +22,18 @@
         </fieldset>
         <fieldset>
             <label>
+                <select id="font" onchange="draw();">
+                    <option value="linjasike" selected>linja sike</option>
+                    <option value="linjasuwi">linja suwi</option>
+                    <option value="pulukin">PuLukin</option>
+                    <option value="linjapona">linja pona</option>
+                    <option value="sitelenponapona">sitelen pona pona</option>
+                </select>
+                Font
+            <label>
+                </br>
                 <input id="preview" type="checkbox" spellcheck="false" onclick="setPreview(this);" checked="true" />
-                preview toki pona
+                preview font 
             </label>
             </br>
             <label><input id="shadow" type="checkbox" onchange="draw()" />drop shadow</label>
@@ -227,7 +241,13 @@
         <canvas id="canvas"></canvas>
         <img id='image'/>
         <p>
-        <a href="linja-sike-beta-2-for-u.otf">font</a> created by: lipamanka#6684 (on discord)
+        <ul>
+            <li><a href="linja-sike-beta-2-for-u.otf">linja sike</a> created by: lipamanka#6684 (on discord)</li>
+            <li><a href="linjasuwi.otf">linja suwi</a> created by: <a href="https://linjasuwi.ap5.dev/">jan Ana</a></li>
+            <li><a href="linja-pona-4.2.otf">linja pona</a> created by: <a href="http://musilili.net/linja-pona/">David A. Roberts</a></li>
+            <li><a href="sitelen-pona-pona.otf">sitelen pona pona</a> created by: <a href="https://jackhumbert.github.io/sitelen-pona-pona/">Jack Humbert</a></li>
+            <li><a href="PuLukin.otf">PuLukin</a> created by: <a href="https://zacstan.github.io/OKepekenELinjaPiPuLukin/">jan Sa</a></li>
+        </ul>
         </p>
         <script>
             const text = document.getElementById('text');
@@ -241,20 +261,21 @@
 
             const setPreview = preview => {
                 if (preview.checked){
-                    text.style.fontFamily = 'linjasike';
+                    text.style.fontFamily = document.getElementById("font").value;
                 } else {
                     text.style.fontFamily = 'arial';
                 }
             };
 
             const draw = () => {
+                setPreview(document.getElementById('preview'));
                 window.location.hash = encodeURI(text.value);
                 const fontsize = document.getElementById('fontsize').value;
                 const stroke = document.getElementById('strokesize').value;
                 const lines = text.value.split('\n')
                 ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.font = `${fontsize}px linjasike`;
+                ctx.font = `${fontsize}px ${document.getElementById("font").value}`;
                 const metrics = ctx.measureText('[');
                 canvas.width = lines.reduce((len, line) => {
                     ctx.fillText(line, 0, fontsize);
@@ -302,7 +323,7 @@
                     ctx.fillRect(0, 0, canvas.width, canvas.height);
                 };
                 
-                ctx.font = `${fontsize}px linjasike`;
+                ctx.font = `${fontsize}px ${document.getElementById("font").value}`;
                 var lineOffset = 0;
                 for (line of lines) {
                     const yOffset = fontsize - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) - lineOffset + 9;
