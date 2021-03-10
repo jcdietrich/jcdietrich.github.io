@@ -210,13 +210,16 @@
                     <button id="sgc" onClick="addToStroke()">add to stroke gradient</button>
                     <button id="sgc" onClick="addToBack()">add to background gradient</button>
                     </br>
-                    <button id="fgc" onClick="resetFill()">reset fill gradient</button>
-                    <button id="sgc" onClick="resetStroke()">reset stroke gradient</button>
-                    <button id="sgc" onClick="resetBack()">reset background gradient</button>
                     </br>
-                    <div><label>H<input type="radio" id="hfg" name="fg" onclick="draw()" checked value="h"></label><label>V<input type="radio" name="fg"onclick="draw()" value="v"></label> Fill Colors:<span id="fillColours"></span></div>
-                    <div><label>H<input type="radio" id="hsg" onclick="draw()" name="sg" checked value="h"></label><label>V<input type="radio" name="sg" onclick="draw()" value="v"></label> Stroke Colors:<span id="strokeColours"></span></div>
-                    <div><label>H<input type="radio" id="hbg" onclick="draw()" name="bg" checked value="h"></label><label>V<input type="radio" name="bg" onclick="draw()" value="v"></label> Background Colors:<span id="backColours"></span></div>
+                    <div><label>H<input type="radio" id="hfg" name="fg" onclick="draw()" checked value="h"></label><label>V<input type="radio" name="fg"onclick="draw()" value="v"></label> Fill Colors:<span id="fillColours"></span>
+                        <button id="fgc" onClick="resetFill()">reset fill gradient</button>
+                    </div>
+                    <div><label>H<input type="radio" id="hsg" onclick="draw()" name="sg" checked value="h"></label><label>V<input type="radio" name="sg" onclick="draw()" value="v"></label> Stroke Colors:<span id="strokeColours"></span>
+                        <button id="sgc" onClick="resetStroke()">reset stroke gradient</button>
+                    </div>
+                    <div><label>H<input type="radio" id="hbg" onclick="draw()" name="bg" checked value="h"></label><label>V<input type="radio" name="bg" onclick="draw()" value="v"></label> Background Colors:<span id="backColours"></span>
+                        <button id="sgc" onClick="resetBack()">reset background gradient</button>
+                    </div>
             </fieldset>
             </br>
         <textarea id="text" spellcheck="false" autocorrect="off" autocapitalize="none" rows=5></textarea>
