@@ -32,20 +32,17 @@
                 font size
             </label>
             </br>
+            <label>
+                <input id="strokesize" type="number" value="1"></input>
+                stroke size
+            </label>
+            </br>
             <fieldset>
-                <legend>font colours</legend>
+                <legend>colours</legend>
 
                 <select id="fontColour1">
                     <option value="black" >black</option>
                     <option value="none">none</option>
-                    <option value="red">red</option>
-                    <option value="blue">blue</option>
-                    <option value="green">green</option>
-                    <option value="purple">purple</option>
-                    <option value="yellow">yellow</option>
-                    <option value="orange">orange</option>
-                    <option value="white">white</option>
-
                     <optgroup label="Red">
                         <option value="IndianRed">IndianRed</option>
                         <option value="LightCoral">LightCoral</option>
@@ -209,79 +206,16 @@
                         <option value="Black">Black</option>
                     </optgroup>
                 </select>
-                
-                <select id="fontColour2">
-                    <option value="none">none</option>
-                    <option value="black" >black</option>
-                    <option value="red">red</option>
-                    <option value="blue">blue</option>
-                    <option value="green">green</option>
-                    <option value="purple">purple</option>
-                    <option value="yellow">yellow</option>
-                    <option value="orange">orange</option>
-                    <option value="white">white</option>
-                </select>
-
-                <select id="fontColour3">
-                    <option value="none">none</option>
-                    <option value="black" >black</option>
-                    <option value="red">red</option>
-                    <option value="blue">blue</option>
-                    <option value="green">green</option>
-                    <option value="purple">purple</option>
-                    <option value="yellow">yellow</option>
-                    <option value="orange">orange</option>
-                    <option value="white">white</option>
-                </select>
-                <label>
+                    <button id="fgc" onClick="addToFill()">add to fill gradient</button>
+                    <button id="sgc" onClick="addToStroke()">add to stroke gradient</button>
+                    </br>
+                    <button id="fgc" onClick="resetFill()">reset fill gradient</button>
+                    <button id="sgc" onClick="resetStroke()">reset stroke gradient</button>
+                    </br>
+                    <div>Fill Colors:<span id="fillColours">Black</span></div>
+                    <div>Stroke Colors:<span id="strokeColours"></span></div>
             </fieldset>
             </br>
-            <label>
-                <input id="strokesize" type="number" value="1"></input>
-                stroke size
-            </label>
-            </br>
-            <fieldset>
-                <legend>stroke colours</legend>
-
-                <select id="strokeColour1">
-                    <option value="none">none</option>
-                    <option value="black" >black</option>
-                    <option value="red">red</option>
-                    <option value="blue">blue</option>
-                    <option value="green">green</option>
-                    <option value="purple">purple</option>
-                    <option value="yellow">yellow</option>
-                    <option value="orange">orange</option>
-                    <option value="white">white</option>
-                    <option value="pattern">pattern</option>
-                </select>
-                
-                <select id="strokeColour2">
-                    <option value="none">none</option>
-                    <option value="black" >black</option>
-                    <option value="red">red</option>
-                    <option value="blue">blue</option>
-                    <option value="green">green</option>
-                    <option value="purple">purple</option>
-                    <option value="yellow">yellow</option>
-                    <option value="orange">orange</option>
-                    <option value="white">white</option>
-                </select>
-
-                <select id="strokeColour3">
-                    <option value="none">none</option>
-                    <option value="black" >black</option>
-                    <option value="red">red</option>
-                    <option value="blue">blue</option>
-                    <option value="green">green</option>
-                    <option value="purple">purple</option>
-                    <option value="yellow">yellow</option>
-                    <option value="orange">orange</option>
-                    <option value="white">white</option>
-                </select>
-                </label>
-            </fieldset>
         <textarea id="text" spellcheck="false" autocorrect="off" autocapitalize="none" rows=5></textarea>
         <button id="go" onclick="draw()">go</button>
         <canvas id="canvas"></canvas>
@@ -292,7 +226,10 @@
         <script>
             const text = document.getElementById('text');
             const canvas = document.getElementById('canvas');
-            
+           
+            let strokeColours = [];
+            let fillColours = ['Black'];
+
             text.value = decodeURI(window.location.hash.substr(1));
 
             const setPreview = preview => {
@@ -337,32 +274,32 @@
                         ctx.shadowBlur = 4;
                     };
 
-                    const strokeColour = document.getElementById('strokeColour');
-
-
-                    const strokeColour1 = document.getElementById('strokeColour1').value;
-                    const strokeColour2 = document.getElementById('strokeColour2').value;
-                    const strokeColour3 = document.getElementById('strokeColour3').value;
+                    const numStroke = strokeColours.length;
                     const gradient1 = ctx.createLinearGradient(0, 0, canvas.width, 0);
 
-                    if (strokeColour2 !== 'none') {
-                        if (strokeColour3 != 'none') {
-                            gradient1.addColorStop("0", strokeColour1);
-                            gradient1.addColorStop("0.5", strokeColour2);
-                            gradient1.addColorStop("1.0", strokeColour3);
-                        } else {
-                            gradient1.addColorStop("0", strokeColour1);
-                            gradient1.addColorStop("1.0", strokeColour2);
-                        };
+                    if (numStroke === 1){
+                        ctx.strokeStyle = strokeColours[0];
+                    } else if(numStroke >= 2) {
+                        gradient1.addColorStop("0", strokeColours[0]);
+                        gradient1.addColorStop("1.0", strokeColours[numStroke-1]);
+                        
+                        numInner = numStroke - 2;
+                        if (numInner >0){
+                           const gradIncr = 1/ (numInner +1);
+                            let currentIncr = gradIncr;
+                            for (let i = 0; i <= numInner; i++){
+                                gradient1.addColorStop(currentIncr, strokeColours[i+1]);
+                                currentIncr += gradIncr;
+                            }
+                        }
                         ctx.strokeStyle = gradient1;
-                    } else {
-                        ctx.strokeStyle = strokeColour1;
-                    }
+                    };
 
-                    if (strokeColour1 !== 'none'){
+                    if (numStroke > 0){
                         ctx.lineWidth = stroke;
                         ctx.strokeText(line, xOffset, yOffset);
                     };
+
 
                     const glow = document.getElementById('glow').checked;
                     if (glow) {
@@ -373,30 +310,31 @@
                         ctx.filter = "none";
                     };
 
-
-                    const fontColour1 = document.getElementById('fontColour1').value;
-                    const fontColour2 = document.getElementById('fontColour2').value;
-                    const fontColour3 = document.getElementById('fontColour3').value;
+                    const numFill = fillColours.length;
                     const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
 
-                    if (fontColour2 !== 'none') {
-                        if (fontColour3 != 'none') {
-                            gradient.addColorStop("0", fontColour1);
-                            gradient.addColorStop("0.5", fontColour2);
-                            gradient.addColorStop("1.0", fontColour3);
-                        } else {
-                            gradient.addColorStop("0", fontColour1);
-                            gradient.addColorStop("1.0", fontColour2);
-                        };
+                    if (numFill === 1){
+                        ctx.fillStyle = fillColours[0];
+                    } else if(numFill >= 2) {
+                        gradient.addColorStop("0", fillColours[0]);
+                        gradient.addColorStop("1.0", fillColours[numFill - 1]);
+                        
+                        numInner = numFill - 2;
+                        if (numInner > 0){
+                            const gradIncr = 1/ (numInner +1);
+                            let currentIncr = gradIncr;
+                            for (let i = 0; i <= numInner; i++){
+                                gradient.addColorStop(currentIncr, fillColours[i+1]);
+                                currentIncr += gradIncr;
+                            }
+                        }
                         ctx.fillStyle = gradient;
-                    } else {
-                        ctx.fillStyle = fontColour1;
                     };
-
 
                     if (fontColour1 !== 'none') {
                         ctx.fillText(line, xOffset, yOffset);
                     };
+
                     lineOffset = parseInt(lineOffset) - parseInt(fontsize) -  Math.floor(stroke/2) ;
                 };
 
@@ -437,6 +375,26 @@
                     search(document.getElementById("word").value);
                 }
             });
+
+            const addToStroke = () => {
+               strokeColours.push(document.getElementById('fontColour1').value);
+                document.getElementById('strokeColours').innerHTML = strokeColours;
+            }
+
+            const addToFill = () => {
+               fillColours.push(document.getElementById('fontColour1').value);
+                document.getElementById('fillColours').innerHTML = fillColours;
+            }
+
+            const resetFill = () => {
+               fillColours = [];
+                document.getElementById('fillColours').innerHTML = fillColours;
+            }
+
+            const resetStroke = () => {
+                strokeColours = [];
+                document.getElementById('strokeColours').innerHTML = strokeColours;
+            }
         </script>
     </body>
 </html>
