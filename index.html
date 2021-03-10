@@ -260,7 +260,7 @@
                     ctx.fillText(line, 0, fontsize);
                     const info = ctx.measureText(line);
 
-                    const lineWidth = info.width + Math.floor(fontsize/2) +10;
+                    const lineWidth = info.width + Math.floor(fontsize);
                     if (lineWidth > len){
                        return lineWidth;
                     };
