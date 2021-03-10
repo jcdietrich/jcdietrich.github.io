@@ -28,12 +28,12 @@
             </br>
             </br>
             <label>
-                <input id="fontsize" type="number" value="56"></input>
+                <input id="fontsize" type="number" onBlur="draw()" value="56"></input>
                 font size
             </label>
             </br>
             <label>
-                <input id="strokesize" type="number" value="1"></input>
+                <input id="strokesize" type="number" onBlur="draw()" value="1"></input>
                 stroke size
             </label>
             </br>
@@ -41,8 +41,8 @@
                 <legend>colours</legend>
 
                 <select id="fontColour1">
-                    <option value="black" >black</option>
-                    <option value="none">none</option>
+                    <option value="Black" >Black</option>
+                    <option value="White" >White</option>
                     <optgroup label="Red">
                         <option value="IndianRed">IndianRed</option>
                         <option value="LightCoral">LightCoral</option>
@@ -212,7 +212,7 @@
                     <button id="fgc" onClick="resetFill()">reset fill gradient</button>
                     <button id="sgc" onClick="resetStroke()">reset stroke gradient</button>
                     </br>
-                    <div>Fill Colors:<span id="fillColours">Black</span></div>
+                    <div>Fill Colors:<span id="fillColours"></span></div>
                     <div>Stroke Colors:<span id="strokeColours"></span></div>
             </fieldset>
             </br>
@@ -228,7 +228,7 @@
             const canvas = document.getElementById('canvas');
            
             let strokeColours = [];
-            let fillColours = ['Black'];
+            let fillColours = [];
 
             text.value = decodeURI(window.location.hash.substr(1));
 
@@ -305,7 +305,6 @@
                     if (glow) {
                         ctx.lineWidth = stroke;
                         ctx.filter = `blur(${Math.min(stroke,8)}px)`;
-                        console.log(ctx.filter);
                         ctx.strokeText(line, xOffset, yOffset);
                         ctx.filter = "none";
                     };
