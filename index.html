@@ -214,9 +214,9 @@
                     <button id="sgc" onClick="resetStroke()">reset stroke gradient</button>
                     <button id="sgc" onClick="resetBack()">reset background gradient</button>
                     </br>
-                    <div>Fill Colors:<span id="fillColours"></span></div>
-                    <div>Stroke Colors:<span id="strokeColours"></span></div>
-                    <div>Background Colors:<span id="backColours"></span></div>
+                    <div><label>H<input type="radio" id="hfg" name="fg" onclick="draw()" checked value="h"></label><label>V<input type="radio" name="fg"onclick="draw()" value="v"></label> Fill Colors:<span id="fillColours"></span></div>
+                    <div><label>H<input type="radio" id="hsg" onclick="draw()" name="sg" checked value="h"></label><label>V<input type="radio" name="sg" onclick="draw()" value="v"></label> Stroke Colors:<span id="strokeColours"></span></div>
+                    <div><label>H<input type="radio" id="hbg" onclick="draw()" name="bg" checked value="h"></label><label>V<input type="radio" name="bg" onclick="draw()" value="v"></label> Background Colors:<span id="backColours"></span></div>
             </fieldset>
             </br>
         <textarea id="text" spellcheck="false" autocorrect="off" autocapitalize="none" rows=5></textarea>
@@ -269,7 +269,13 @@
 
                 
                 const numBack = backColours.length;
-                const gradient2 = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                let gradient2;
+
+                if(document.getElementById('hbg').checked) {
+                    gradient2 = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                } else {
+                    gradient2 = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                }
 
                 if (numBack === 1){
                     ctx.fillStyle = backColours[0];
@@ -306,7 +312,13 @@
                     };
 
                     const numStroke = strokeColours.length;
-                    const gradient1 = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                    let gradient1;
+
+                    if (document.getElementById('hsg').checked) {
+                        gradient1 = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                    } else {
+                        gradient1 = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                    }
 
                     if (numStroke === 1){
                         ctx.strokeStyle = strokeColours[0];
@@ -341,7 +353,13 @@
                     };
 
                     const numFill = fillColours.length;
-                    const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                    let gradient;
+
+                    if (document.getElementById('hfg').checked) {
+                        gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                    } else {
+                        gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                    }
 
                     if (numFill === 1){
                         ctx.fillStyle = fillColours[0];
