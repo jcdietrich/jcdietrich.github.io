@@ -231,13 +231,25 @@
                     <button id="sgc" onClick="addToBack()">add to background gradient</button>
                     </br>
                     </br>
-                    <div><label>H<input type="radio" id="hfg" name="fg" onclick="draw()" checked value="h"></label><label>V<input type="radio" name="fg"onclick="draw()" value="v"></label> Fill Colors:<span id="fillColours"></span>
+                    <div>
+                        <label>H<input type="radio" id="hfg" name="fg" onclick="draw()" checked value="h"></label>
+                        <label>V<input type="radio" id="vfg" name="fg"onclick="draw()" value="v"></label>
+                        <label>R<input type="radio" id="rfg" name="fg"onclick="draw()" value="r"></label>
+                        Fill Colors:<span id="fillColours"></span>
                         <button id="fgc" onClick="resetFill()">reset fill gradient</button>
                     </div>
-                    <div><label>H<input type="radio" id="hsg" onclick="draw()" name="sg" checked value="h"></label><label>V<input type="radio" name="sg" onclick="draw()" value="v"></label> Stroke Colors:<span id="strokeColours"></span>
+                    <div>
+                        <label>H<input type="radio" id="hsg" onclick="draw()" name="sg" checked value="h"></label>
+                        <label>V<input type="radio" id="vsg" name="sg" onclick="draw()" value="v"></label>
+                        <label>R<input type="radio" id="rsg" name="sg" onclick="draw()" value="r"></label>
+                        Stroke Colors:<span id="strokeColours"></span>
                         <button id="sgc" onClick="resetStroke()">reset stroke gradient</button>
                     </div>
-                    <div><label>H<input type="radio" id="hbg" onclick="draw()" name="bg" checked value="h"></label><label>V<input type="radio" name="bg" onclick="draw()" value="v"></label> Background Colors:<span id="backColours"></span>
+                    <div>
+                        <label>H<input type="radio" id="hbg" onclick="draw()" name="bg" checked value="h"></label>
+                        <label>V<input type="radio" id="vbg" name="bg" onclick="draw()" value="v"></label>
+                        <label>R<input type="radio" id="rbg" name="bg" onclick="draw()" value="r"></label>
+                        Background Colors:<span id="backColours"></span>
                         <button id="sgc" onClick="resetBack()">reset background gradient</button>
                     </div>
             </fieldset>
@@ -297,14 +309,18 @@
 
                 canvas.height = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent + 20 + parseInt(stroke) + (lines.length -1) * fontsize;
 
+                const centerX = canvas.width /2;
+                const centerY = canvas.height/2;
                 
                 const numBack = backColours.length;
                 let gradient2;
 
                 if(document.getElementById('hbg').checked) {
                     gradient2 = ctx.createLinearGradient(0, 0, canvas.width, 0);
-                } else {
+                } else if (document.getElementById('vbg').checked) {
                     gradient2 = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                } else {
+                    gradient2 = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, canvas.width);
                 }
 
                 if (numBack === 1){
@@ -331,6 +347,7 @@
                 
                 ctx.font = `${fontsize}px ${document.getElementById("font").value}`;
                 var lineOffset = 0;
+
                 for (line of lines) {
                     const yOffset = fontsize - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) - lineOffset + 9;
                     let xOffset = Math.floor(fontsize/2);
@@ -352,8 +369,10 @@
 
                     if (document.getElementById('hsg').checked) {
                         gradient1 = ctx.createLinearGradient(0, 0, canvas.width, 0);
-                    } else {
+                    } else if (document.getElementById('vsg').checked) {
                         gradient1 = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                    } else {
+                        gradient1 = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, canvas.width);
                     }
 
                     if (numStroke === 1){
@@ -393,8 +412,10 @@
 
                     if (document.getElementById('hfg').checked) {
                         gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-                    } else {
+                    } else if (document.getElementById('vfg').checked) {
                         gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                    } else {
+                        gradient = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, canvas.width);
                     }
 
                     if (numFill === 1){
