@@ -40,6 +40,7 @@
             </br>
             <label><input id="glow" type="checkbox" onchange="draw()" />glow</label>
             </br>
+            <label><input id="center" type="checkbox" onchange="draw()" />centered</label>
             </br>
             <label>
                 <input id="fontsize" type="number" onBlur="draw()" value="56"></input>
@@ -327,7 +328,13 @@
                 var lineOffset = 0;
                 for (line of lines) {
                     const yOffset = fontsize - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) - lineOffset + 9;
-                    const xOffset = Math.floor(fontsize/2);
+                    let xOffset = Math.floor(fontsize/2);
+                    
+                    if (document.getElementById('center').checked){
+                        const lineWidth = ctx.measureText(line).width;
+                        xOffset = (canvas.width - lineWidth) / 2;
+                    };
+
                     if (document.getElementById('shadow').checked) {
                         ctx.shadowOffsetX = 3;
                         ctx.shadowOffsetY = 3;
