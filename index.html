@@ -156,7 +156,7 @@
                         <option value="Aquamarine">Aquamarine</option>
                         <option value="Turquoise">Turquoise</option>
                         <option value="MediumTurquoise">MediumTurquoise</option>
-                        <option value="DarkTuquoise">DarkTuquoise</option>
+                        <option value="DarkTurquoise">DarkTurquoise</option>
                         <option value="CadetBlue">CadetBlue</option>
                         <option value="SteelBlue">SteelBlue</option>
                         <option value="LightSteelBlue">LightSteelBlue</option>
@@ -320,7 +320,7 @@
                 } else if (document.getElementById('vbg').checked) {
                     gradient2 = ctx.createLinearGradient(0, 0, 0, canvas.height);
                 } else {
-                    gradient2 = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, canvas.width);
+                    gradient2 = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, canvas.width/2);
                 }
 
                 if (numBack === 1){
@@ -372,7 +372,7 @@
                     } else if (document.getElementById('vsg').checked) {
                         gradient1 = ctx.createLinearGradient(0, 0, 0, canvas.height);
                     } else {
-                        gradient1 = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, canvas.width);
+                        gradient1 = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, canvas.width/2);
                     }
 
                     if (numStroke === 1){
@@ -415,7 +415,7 @@
                     } else if (document.getElementById('vfg').checked) {
                         gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
                     } else {
-                        gradient = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, canvas.width);
+                        gradient = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, canvas.width/2);
                     }
 
                     if (numFill === 1){
