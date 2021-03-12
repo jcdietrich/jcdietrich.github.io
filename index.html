@@ -307,7 +307,7 @@
                     return len;
                 }, 0);
 
-                canvas.height = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent + Math.max(20, fontsize * 0.2) + parseInt(stroke)*2 + (lines.length -1) * fontsize;
+                canvas.height = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent + fontsize * 0.4 + parseInt(stroke)*2 + (lines.length -1) * fontsize;
 
                 const centerX = canvas.width /2;
                 const centerY = canvas.height/2;
