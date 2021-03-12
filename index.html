@@ -37,7 +37,7 @@
                 Font
             <label>
                 </br>
-                <input id="preview" type="checkbox" spellcheck="false" onclick="setPreview(this);" checked="true" />
+                <input id="preview" type="checkbox" spellcheck="false" onclick="setPreview(this);" />
                 preview font 
             </label>
             </br>
@@ -294,7 +294,7 @@
                 ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.font = `${fontsize}px ${document.getElementById("font").value}`;
-                const metrics = ctx.measureText('[');
+                const metrics = ctx.measureText('[ma+pona+toki+pona');
                 canvas.width = lines.reduce((len, line) => {
                     ctx.fillText(line, 0, fontsize);
                     const info = ctx.measureText(line);
@@ -307,7 +307,7 @@
                     return len;
                 }, 0);
 
-                canvas.height = metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent + 20 + parseInt(stroke) + (lines.length -1) * fontsize;
+                canvas.height = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent + Math.max(20, fontsize * 0.1) + parseInt(stroke)*2 + (lines.length -1) * fontsize;
 
                 const centerX = canvas.width /2;
                 const centerY = canvas.height/2;
@@ -349,7 +349,7 @@
                 var lineOffset = 0;
 
                 for (line of lines) {
-                    const yOffset = fontsize - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) - lineOffset + 9;
+                    const yOffset = fontsize * 1.1 - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) - lineOffset + 9;
                     let xOffset = Math.floor(fontsize/2);
                     
                     if (document.getElementById('center').checked){
