@@ -257,6 +257,7 @@
                     </div>
             </fieldset>
             </br>
+            <label><input type="text" id="img"> URL to font background image</label>
         <textarea id="text" spellcheck="false" autocorrect="off" autocapitalize="none" rows=5></textarea>
         <button id="go" onclick="draw()">go</button>
         <canvas id="canvas"></canvas>
@@ -447,6 +448,17 @@
                     lineOffset = parseInt(lineOffset) - parseInt(fontsize)*1.1 -  Math.floor(stroke/2) ;
                 };
 
+                const img = document.getElementById("img").value
+                if (img !== ''){
+                    console.log(img);
+
+                    ctx.beginPath();
+                    ctx.globalCompositeOperation="source-in";
+                    downloadedImg = new Image;
+                    downloadedImg.crossOrigin = "Anonymous";
+                    downloadedImg.src = img;
+                    ctx.drawImage(downloadedImg,0,0);
+                }
                 const image = document.getElementById('image');
                 image.src = canvas.toDataURL();
             }
@@ -523,3 +535,4 @@
         </script>
     </body>
 </html>
+
