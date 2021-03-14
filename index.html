@@ -311,7 +311,7 @@
                     return len;
                 }, 0);
 
-                canvas.height = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent + fontsize * 0.2 + parseInt(stroke)*2 + (lines.length -1) * fontsize * 1.15;
+                canvas.height = Math.floor(Math.floor(metrics.actualBoundingBoxAscent) + Math.floor(metrics.actualBoundingBoxDescent) + Math.floor(fontsize * 0.2) + parseInt(stroke)*2 + ((lines.length -1) * fontsize * 1.15));
 
                 const centerX = canvas.width /2;
                 const centerY = canvas.height/2;
@@ -353,9 +353,9 @@
                 var lineOffset = 0;
 
                 for (line of lines) {
-                    const yOffset = fontsize * 1.1 - metrics.fontBoundingBoxDescent + Math.floor(stroke/2) - lineOffset;
+                    const yOffset = Math.floor(fontsize * 1.1 - metrics.actualBoundingBoxDescent + Math.floor(stroke/2) - lineOffset);
                     let xOffset = Math.floor(fontsize/2);
-                    
+
                     if (document.getElementById('center').checked){
                         const lineWidth = ctx.measureText(line).width;
                         xOffset = (canvas.width - lineWidth) / 2;
@@ -441,7 +441,6 @@
                     };
 
                     if (fontColour1 !== 'none') {
-                        console.log(xOffset, yOffset);
                         ctx.fillText(line, xOffset, yOffset);
                     };
 
