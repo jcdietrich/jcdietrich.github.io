@@ -298,7 +298,8 @@
                 const lines = text.value.split('\n')
                 ctx = canvas.getContext('2d');
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.font = `${fontsize}px ${document.getElementById("font").value}`;
+                const font = document.getElementById("font").value;
+                ctx.font = `${fontsize}px ${font}`;
                 const metrics = ctx.measureText('[_ma+pona+toki+pona');
                 canvas.width = lines.reduce((len, line) => {
                     ctx.fillText(line, 0, fontsize);
@@ -353,10 +354,18 @@
                 ctx.font = `${fontsize}px ${document.getElementById("font").value}`;
                 var lineOffset = 0;
 
-                for (line of lines) {
-                    const yOffset = Math.floor(fontsize * 1.1 - metrics.actualBoundingBoxDescent + Math.floor(stroke/2) - lineOffset);
-                    let xOffset = Math.floor(fontsize/2);
+                const fontOffset = {
+                    linjasuwi: -12,
+                    pulukin: 17,
+                    sitelenponapona: -5,
+                };
 
+                fontOffsetValue = fontOffset[font] || 0;
+
+                for (line of lines) {
+                    const yOffset = Math.floor(fontsize * 1.1 - metrics.actualBoundingBoxDescent + Math.floor(stroke/2) - lineOffset + fontOffsetValue);
+                    let xOffset = Math.floor(fontsize/2);
+console.log(xOffset, yOffset);
                     if (document.getElementById('center').checked){
                         const lineWidth = ctx.measureText(line).width;
                         xOffset = (canvas.width - lineWidth) / 2;
@@ -535,4 +544,3 @@
         </script>
     </body>
 </html>
-
