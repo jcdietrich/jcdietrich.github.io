@@ -257,7 +257,7 @@
                     </div>
             </fieldset>
             </br>
-            <label><input type="text" id="img"> URL to font background image</label>
+            <label><input type="text" id="img"> URL to background image</label>
         <textarea id="text" spellcheck="false" autocorrect="off" autocapitalize="none" rows=5></textarea>
         <button id="go" onclick="draw()">go</button>
         <canvas id="canvas"></canvas>
@@ -351,6 +351,19 @@
                     ctx.fillRect(0, 0, canvas.width, canvas.height);
                 };
                 
+                const img = document.getElementById("img").value
+                if (img !== ''){
+
+                    ctx.beginPath();
+                    downloadedImg = new Image;
+                    downloadedImg.crossOrigin = "Anonymous";
+                    downloadedImg.src = img;
+                    if (downloadedImg.width > canvas.width) {
+                        canvas.width = downloadedImg.width;
+                    };
+                    ctx.drawImage(downloadedImg,0,0);
+                };
+
                 ctx.font = `${fontsize}px ${document.getElementById("font").value}`;
                 var lineOffset = 0;
 
@@ -365,7 +378,6 @@
                 for (line of lines) {
                     const yOffset = Math.floor(fontsize * 1.1 - metrics.actualBoundingBoxDescent + Math.floor(stroke/2) - lineOffset + fontOffsetValue);
                     let xOffset = Math.floor(fontsize/2);
-console.log(xOffset, yOffset);
                     if (document.getElementById('center').checked){
                         const lineWidth = ctx.measureText(line).width;
                         xOffset = (canvas.width - lineWidth) / 2;
@@ -457,17 +469,6 @@ console.log(xOffset, yOffset);
                     lineOffset = parseInt(lineOffset) - parseInt(fontsize)*1.1 -  Math.floor(stroke/2) ;
                 };
 
-                const img = document.getElementById("img").value
-                if (img !== ''){
-                    console.log(img);
-
-                    ctx.beginPath();
-                    ctx.globalCompositeOperation="source-in";
-                    downloadedImg = new Image;
-                    downloadedImg.crossOrigin = "Anonymous";
-                    downloadedImg.src = img;
-                    ctx.drawImage(downloadedImg,0,0);
-                }
                 const image = document.getElementById('image');
                 image.src = canvas.toDataURL();
             }
