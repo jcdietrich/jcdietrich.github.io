@@ -257,7 +257,8 @@
                     </div>
             </fieldset>
             </br>
-            <label><input type="text" id="img"> URL to background image</label>
+            <label><input type="text" id="img" onBlur="draw()"> URL to background image</label>
+            <label><input type="checkbox" id="showImg" onchange="draw()">show all of image</label>
         <textarea id="text" spellcheck="false" autocorrect="off" autocapitalize="none" rows=5></textarea>
         <button id="go" onclick="draw()">go</button>
         <canvas id="canvas"></canvas>
@@ -351,18 +352,20 @@
                     ctx.fillRect(0, 0, canvas.width, canvas.height);
                 };
                 
-                const img = document.getElementById("img").value
+                const img = document.getElementById("img").value;
+                const showImg = document.getElementById("showImg").checked;
+                console.log(showImg);
                 if (img !== ''){
 
                     ctx.beginPath();
                     downloadedImg = new Image;
                     downloadedImg.crossOrigin = "Anonymous";
                     downloadedImg.src = img;
-                    if (downloadedImg.width > canvas.width) {
+                    if (showImg && downloadedImg.width > canvas.width) {
                         canvas.width = downloadedImg.width;
                     };
 
-                    if (downloadedImg.height > canvas.height) {
+                    if (showImg && downloadedImg.height > canvas.height) {
                         canvas.height = downloadedImg.height;
                     };
                     ctx.drawImage(downloadedImg,0,0);
