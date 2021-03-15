@@ -361,6 +361,10 @@
                     if (downloadedImg.width > canvas.width) {
                         canvas.width = downloadedImg.width;
                     };
+
+                    if (downloadedImg.height > canvas.height) {
+                        canvas.height = downloadedImg.height;
+                    };
                     ctx.drawImage(downloadedImg,0,0);
                 };
 
