@@ -7,6 +7,7 @@
         <link rel="preload" as="font" crossOrigin="anonymous" href="sitelen-pona-pona.otf">
         <link rel="preload" as="font" crossOrigin="anonymous" href="sitelen_telo_1.01.otf">
         <link rel="preload" as="font" crossOrigin="anonymous" href="linjapimeja19.ttf">
+        <link rel="preload" as="font" crossOrigin="anonymous" href="TokiPonaSetaSans-Regular2.otf">
         <style>
             @font-face {font-family: linjasike; src: url(linja-sike-beta-three-para-ti.otf)}
             @font-face {font-family: linjasuwi; src: url(linjasuwi.otf)}
@@ -15,6 +16,7 @@
             @font-face {font-family: sitelenponapona; src: url(sitelen-pona-pona.otf)}
             @font-face {font-family: sitelentelo; src: url(sitelen_telo_1.01.otf)}
             @font-face {font-family: linjapimeja; src: url(linjapimeja19.ttf)}
+            @font-face {font-family: setasans; src: url(TokiPonaSetaSans-Regular2.otf)}
             #text {font-size:200%; font-family: linjasike;width:100%;}
             #canvas {border-style: dashed;}
         </style>
@@ -39,6 +41,7 @@
                     <option value="sitelenponapona">sitelen pona pona</option>
                     <option value="sitelentelo">sitelen telo</option>
                     <option value="linjapimeja">linja pimeja</option>
+                    <option value="setasans">seta sans</option>
                 </select>
                 Font
             <label>
@@ -256,7 +259,7 @@
                         <label>V<input type="radio" id="vbg" name="bg" onclick="draw()" value="v"></label>
                         <label>R<input type="radio" id="rbg" name="bg" onclick="draw()" value="r"></label>
                         Background Colors:<span id="backColours"></span>
-                        <button id="sgr" onClick="resetBack()">reset background gradient</button>
+                        <button id="bgr" onClick="resetBack()">reset background gradient</button>
                     </div>
             </fieldset>
             </br>
@@ -275,6 +278,8 @@
             <li><a href="PuLukin.otf">PuLukin</a> created by: <a href="https://zacstan.github.io/OKepekenELinjaPiPuLukin/">jan Sa</a></li>
             <li><a href="sitelen_telo_1.01.otf">sitelen telo</a> created by: <a href="https://drive.google.com/drive/folders/1KDVbtq8_GaC2DqOUrb10IXlVgp7DJIJi">efofecks</a></li>
             <li><a href="linjapimeja19.ttf">linja pimeja</a> created by: <a href="https://web.archive.org/web/20200908080330/https://github.com/increpare/linja_pimeja/">Stephen Lavelle</a></li>
+            <li><a href="TokiPonaSetaSans-Regular2.otf">seta sans</a> created by:Eschar
+#5657 (on discord)</li>
         </ul>
         </p>
         <script>
