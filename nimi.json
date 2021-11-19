@@ -1,0 +1,482 @@
+[
+  {
+    "nimi": "a",
+    "usage": "ah (94), ha (83), ooh (80), uh (73), gosh (73), wow (61), um (47), huh (44), uh-huh (39), quite (29), gasp (28), sigh (27), really (27), mm-hmm (27), hmm (27)"
+  },
+  {
+    "nimi": "akesi",
+    "usage": "reptile (96), frog (56)"
+  },
+  {
+    "nimi": "ala",
+    "usage": "zero (100), not (100), none (100), no (94), nothing (81), neither (60), hardly (28)"
+  },
+  {
+    "nimi": "alasa",
+    "usage": "hunt (100), hunting (87), search (75), pursuit (75), pursue (74), gather (61), seek (56), explore (44), chase (39), locate (38), try (36), quest (33), collect (33), catch (26)"
+  },
+  {
+    "nimi": "ale",
+    "usage": "every (80), everything (77), all (68), total (53), totally (35), each (33), fully (32), thoroughly (30), any (30), absolute (29), general (27), countless (27), complete (26), whole (25)"
+  },
+  {
+    "nimi": "ali",
+    "usage": "all (32)"
+  },
+  {
+    "nimi": "anpa",
+    "usage": "down (96), defeat (58), below (58), under (35), bow (30), underlying (25)"
+  },
+  {
+    "nimi": "ante",
+    "usage": "other (100), different (100), changing (100), alter (94), alternative (76), convert (75), edit (73), difference (71), distinct (69), differently (69), vary (67), variation (60), distinction (55), contrast (55), switch (50), replace (50), else (47), another (47), conversion (46), adjustment (42), affect (40), adapt (40), distinguish (37), adjust (37), amendment (36), unlike (33), opposed (33), separate (30), counterpart (29), diversity (26), shift (25)"
+  },
+  {
+    "nimi": "anu",
+    "usage": "whether (60), choice (47), selection (36), select (31), either (31), decide (31)"
+  },
+  {
+    "nimi": "awen",
+    "usage": "wait (100), stay (100), await (100), remain (84), sustain (83), defend (76), continued (74), continue (73), secure (72), continuing (71), save (70), protect (67), keep (61), still (60), reserve (58), remaining (56), protection (56), continuous (55), maintain (54), safe (53), security (50), defence (44), left (remaining) (42), stand (37), standing (36), steady (35), pause (33), custody (33), safely (31), guard (30), suspend (29), ongoing (27), hang (27), delay (25), conservation (25)"
+  },
+  {
+    "nimi": "en",
+    "usage": "plus (50)"
+  },
+  {
+    "nimi": "esun",
+    "usage": "trade (88), shopping (88), deal (75), commerce (69), sales (67), purchase (67), buy (65), market (62), exchange (58), sell (57), retail (56), business (48), shop (46), store (36), commercial (36), financial (29), enterprise (27), franchise (25), economy (25)"
+  },
+  {
+    "nimi": "ijo",
+    "usage": "thing (100), object (100), item (100), entity (82), phenomenon (67), matter (n) (62), substance (53), anything (50), element (38), being (33), asset (33), chemical (32), subject (30), product (29), example (25)"
+  },
+  {
+    "nimi": "ike",
+    "usage": "bad (100), badly (81), mean (adj) (77), evil (75), negative (73), problem (70), horrible (67), terrible (61), unfortunate (60), poorly (59), awful (55), trouble (53), cruel (46), wrong (43), issue (42), complexity (42), unfair (40), awkward (40), complicated (39), hostile (33), nasty (31), corruption (30), harm (29), hard (difficult) (29), danger (29), cursed (29), complex (29), toxic (27), difficult (27), disorder (26)"
+  },
+  {
+    "nimi": "ilo",
+    "usage": "tool (100), device (95), machine (84), app (73), hardware (64), robot (59), technological (53), mechanical (52), tech (47), mechanism (46), technical (43), software (43), utility (40), instrument (31), application (30), technology (29), computer (26)"
+  },
+  {
+    "nimi": "insa",
+    "usage": "internal (100), inner (100), interior (93), centre (91), guts (71), core (67), inside (58), middle (56), belly (54), stomach (41), internal organ (38), within (35), insert (31), content (27), amid (27)"
+  },
+  {
+    "nimi": "jaki",
+    "usage": "dirty (93), trash (89), gross (87), garbage (86), mess (82), disgusting (79), junk (75), bacteria (67), nasty (62), waste (47), toxic (47), crap (47), infection (44), disease (37), shit (33), bullshit (27)"
+  },
+  {
+    "nimi": "jan",
+    "usage": "person (100), human (93), people (82), anybody (62), dude (61), anyone (56), somebody (50), character (50), guy (43), being (42), individual (31), whoever (30), civilian (30), citizen (30), participant (29)"
+  },
+  {
+    "nimi": "jelo",
+    "usage": "yellow (94), golden (25)"
+  },
+  {
+    "nimi": "jo",
+    "usage": "have (100), possess (95), carry (90), contain (75), own (73), hold (71), possession (68), ownership (67), include (42), consist (42), comprise (41), grasp (33), equip (31), bring (29)"
+  },
+  {
+    "nimi": "kala",
+    "usage": "fish (100), salmon (62)"
+  },
+  {
+    "nimi": "kalama",
+    "usage": "sound (100), noise (79), bang (27)"
+  },
+  {
+    "nimi": "kama",
+    "usage": "arrival (90), arrive (88), become (78), upcoming (71), emerging (69), emerge (67), happen (62), next (36), developmental (33), arise (33), visit (31), induce (31), trigger (29), phenomenon (27), event (27)"
+  },
+  {
+    "nimi": "kasi",
+    "usage": "plant (95), bush (61), tree (32)"
+  },
+  {
+    "nimi": "ken",
+    "usage": "potential (94), capable (90), may (88), possible (86), could (81), eligible (80), can (79), permission (69), likelihood (60), chance (57), probability (56), opportunity (53), maybe (53), available (53), possibly (50), odds (45), liberty (36), viable (33), option (33), might (33), enable (33), privilege (31), likely (30), allow (30), freedom (27)"
+  },
+  {
+    "nimi": "kepeken",
+    "usage": "use (93), utilize (75), via (60), operate (27), interact (26), equip (25)"
+  },
+  {
+    "nimi": "kili",
+    "usage": "fruit (95), vegetable (94), apple (82), kumquat (42), fungus (33), nut (29), bean (29), onion (28), tomato (27)"
+  },
+  {
+    "nimi": "kin",
+    "usage": "also (79), too (73), indeed (25)"
+  },
+  {
+    "nimi": "kiwen",
+    "usage": "solid (100), rock (93), hard object (79), metal (57), steel (56), iron (50), stiff (44), firm (44), silver (31), plastic (25)"
+  },
+  {
+    "nimi": "ko",
+    "usage": "goo (88), semisolid (86), powder (73), paste (73), sand (38), dust (36), substance (33), cream (33), dough (30), mud (28)"
+  },
+  {
+    "nimi": "kon",
+    "usage": "soul (100), air (100), spirit (86), gas (83), essence (65), breathe (60), breath (57), intangible (53), breathing (45), definition (34), breeze (33), abstract (33), smell (29)"
+  },
+  {
+    "nimi": "kule",
+    "usage": "colour (100), diverse (36), LGBTQ+ (35), paint (33)"
+  },
+  {
+    "nimi": "kulupu",
+    "usage": "group (100), community (95), collective (91), tribe (83), squad (80), tribal (75), bunch (75), cluster (71), league (70), society (67), collection (67), association (65), crew (64), club (57), set (54), coalition (54), socially (53), gathering (53), institution (50), category (50), pile (44), crowd (41), ethnic (40), social (38), partnership (38), class (38), bureau (38), stack (35), public (33), committee (33), affiliation (33), pack (27), rally (25), franchise (25), demographic (25), conference (25), company (25)"
+  },
+  {
+    "nimi": "kute",
+    "usage": "hear (100), listen (93), ear (90), hearing (89)"
+  },
+  {
+    "nimi": "la",
+    "usage": "if (88), while (48), depending (43), regarding (38), than (33)"
+  },
+  {
+    "nimi": "lape",
+    "usage": "sleep (100), rest (58), lay (31), lie (be in flat position) (26)"
+  },
+  {
+    "nimi": "laso",
+    "usage": "blue (81), teal (71), green (47)"
+  },
+  {
+    "nimi": "lawa",
+    "usage": "head (100), authority (79), control (77), ruling (75), leading (70), manage (65), administrative (64), leadership (63), rule (60), lead (57), mind (50), legal (50), judicial (50), enforce (50), official (47), conduct (47), brain (45), policy (44), administer (44), regulation (36), executive (36), ownership (33), administration (33), command (30), psychological (29), dominate (29), regime (25), main (25), jurisdiction (25)"
+  },
+  {
+    "nimi": "len",
+    "usage": "clothes (93), fabric (92), outfit (74), privacy (67), cover (64), dress (58), jacket (47), shirt (42), t-shirt (40), hide (37), cotton (33), private (32), wrap (31), costume (30), silk (27), suit (n) (26), underwear (25), hidden (25), coverage (25), canvas (25)"
+  },
+  {
+    "nimi": "lete",
+    "usage": "cold (100), raw (58), cool (25)"
+  },
+  {
+    "nimi": "lili",
+    "usage": "small (100), little (100), short (91), reduce (83), junior (83), slightly (80), minimize (75), minor (69), bit (69), partly (67), reduction (64), brief (63), young (62), fewer (60), less (59), diminish (57), minimal (53), decrease (53), somewhat (50), partially (50), inch (45), subtle (44), lightly (42), kinda (41), hardly (39), partial (36), tight (33), particle (31), mere (29), quarter (27), ounce (27), mild (27), gram (26), shortage (25)"
+  },
+  {
+    "nimi": "linja",
+    "usage": "string (100), line (100), cord (100), rope (92), thread (65), fibre (54), link (43), cable (43), streak (36), row (36), ray (36), wire (33), chain (27), straight (25)"
+  },
+  {
+    "nimi": "lipu",
+    "usage": "paper (93), book (92), ticket (90), document (88), article (86), card (85), page (82), magazine (70), sheet (69), file (64), website (60), essay (57), novel (50), letter (in mail) (47), sign (43), publication (41), doc (39), certificate (39), literature (38), journal (38), flat (37), list (36), blog (36), pad (30), poster (27), form (26), tag (25)"
+  },
+  {
+    "nimi": "loje",
+    "usage": "red (95)"
+  },
+  {
+    "nimi": "lon",
+    "usage": "real (100), existing (100), exist (100), at (100), located (93), presence (89), yep (87), existence (87), actual (86), on (83), true (81), living (73), truth (67), reality (64), yeah (62), physical (62), upon (60), truly (60), genuine (60), in (57), alive (56), position (55), accurate (52), exactly (50), live (47), attendance (46), indeed (42), attend (42), right (not wrong) (41), definitely (40), legitimate (36), honestly (36), location (35), validity (33), correctly (33), correct (33), status (30), certain (30), sure (27), mm-hmm (27), fact (27), amid (27), regarding (25), of course (25), frankly (25)"
+  },
+  {
+    "nimi": "luka",
+    "usage": "hand (100), arm (68), five (64), wrist (50), touch (33), palm (32), handful (29), tap (26), reach (25), elbow (25)"
+  },
+  {
+    "nimi": "lukin",
+    "usage": "see (100), observe (92), look at (86), sight (85), observation (83), gaze (83), check (77), view (74), scan (67), watch (65), visual (64), inspection (60), examine (60), notice (53), appearance (50), examination (47), detect (46), assess (40), stare (38), try (36), perceive (36), impression (33), glance (33), reading (31), regard (v) (29), visible (27), apparent (27), seek (26), eye (26), monitor (25), investigation (25), encounter (25)"
+  },
+  {
+    "nimi": "lupa",
+    "usage": "hole (94), door (87), orifice (79), pit (77), window (57), gate (45), opening (27)"
+  },
+  {
+    "nimi": "ma",
+    "usage": "territory (100), country (100), land (93), realm (91), area (81), region (80), field (80), place (73), earth (71), province (70), zone (69), ground (64), nation (62), environmental (57), environment (54), site (50), location (50), setting (40), landscape (40), outdoors (38), sector (31), kingdom (28), venue (27), outside (26), acre (25)"
+  },
+  {
+    "nimi": "mama",
+    "usage": "parental (100), parent (90), mama (88), mom (75), creator (53), foster (44), originator (43), father (40), daddy (38), dad (25)"
+  },
+  {
+    "nimi": "mani",
+    "usage": "money (100), cash (93), monetary (83), currency (82), worth (70), cattle (68), dollar (67), financial (64), fiscal (54), fee (50), cost (47), valuable (43), pension (40), fund (39), expense (39), economic (39), salary (38), revenue (38), credit (36), price (33), compensation (33), value (32), subsidy (31), profit (31), income (31), payment (29), wealthy (25)"
+  },
+  {
+    "nimi": "meli",
+    "usage": "female (100), woman (77), cisgender woman (31), transgender woman (29), ma'am (27)"
+  },
+  {
+    "nimi": "mi",
+    "usage": "my (100), me (100), our (63), mine (63), myself (47), us (43), we (38), self (38), ourselves (26)"
+  },
+  {
+    "nimi": "mije",
+    "usage": "male (94), man (90), husband (55), cisgender man (50), sir (35), guy (29), boyfriend (29)"
+  },
+  {
+    "nimi": "moku",
+    "usage": "food (100), eating (100), eat (100), consume (97), dining (88), meal (83), consumption (83), swallow (68), nutrition (50), drinking (47), chew (44), absorb (35), drink (27), lunch (26)"
+  },
+  {
+    "nimi": "moli",
+    "usage": "killing (100), dead (94), die (75), dying (69), kill (64), deadly (38), execution (27)"
+  },
+  {
+    "nimi": "monsi",
+    "usage": "butt (93), back (anatomy) (73), behind (35)"
+  },
+  {
+    "nimi": "mu",
+    "usage": "woof (100), meow (100), ribbit (93), animal vocalization (93), purr (92), neigh (88), cock-a-doodle-doo (58), pop (29)"
+  },
+  {
+    "nimi": "mun",
+    "usage": "moon (95), celestial body (80), star (25), planet (19)"
+  },
+  {
+    "nimi": "musi",
+    "usage": "fun (100), entertainment (100), funny (91), play (87), game (86), comedy (83), art (58), fascinating (38), interesting (31), irony (28), sport (27), enjoy (27), creative (27), playoffs (25)"
+  },
+  {
+    "nimi": "mute",
+    "usage": "plenty (100), multiple (100), much (100), many (100), very (93), several (86), lots (83), various (75), quantity (64), twenty (59), fifty (55), thousand (50), nine (50), majority (48), million (44), fifteen (40), dozen (40), amount (40), twelve (39), eight (38), hundred (36), countless (36), billion (35), greatly (33), frequent (33), mostly (32), highly (32), excessive (31), six (30), trillion (29), thirty (29), quite (29), particularly (27), dose (27), ten (26), increasingly (26)"
+  },
+  {
+    "nimi": "namako",
+    "usage": "spice (82), extra (65), adornment (50), extension (38), bonus (37), salt (32), fancy (31)"
+  },
+  {
+    "nimi": "nanpa",
+    "usage": "number (100), count (80), score (57), rating (46), rank (44), ranking (43), statistical (42), quantity (36), calculate (35), percentage (33), grade (33), edition (31), statistics (30), version (27)"
+  },
+  {
+    "nimi": "nasa",
+    "usage": "unusual (88), strange (88), odd (83), drunk (64), silly (58), wild (50), psychoactive (31), nonsense (27)"
+  },
+  {
+    "nimi": "nasin",
+    "usage": "way (100), road (100), method (91), path (83), manner (80), route (75), direction (73), street (71), trail (70), orientation (70), mode (69), technique (67), system (56), layout (56), course (55), process (54), passage (54), track (53), format (52), ideology (50), tactic (48), journey (44), aisle (44), lane (43), norm (40), style (39), guideline (39), procedure (35), protocol (33), plan (33), order (33), channel (32), pattern (28), tendency (25), policy (25), composition (25), angle (25)"
+  },
+  {
+    "nimi": "nena",
+    "usage": "ridge (33), button (33), peak (29)"
+  },
+  {
+    "nimi": "ni",
+    "usage": "this (100), that (86), these (83), those (77), particular (31), there (25)"
+  },
+  {
+    "nimi": "nimi",
+    "usage": "word (100), name (100), term (55), title (50), lyrics (40), label (33), so-called (29), brand (29)"
+  },
+  {
+    "nimi": "noka",
+    "usage": "foot (67), ankle (50), kick (43), heel (38), knee (33), base (31)"
+  },
+  {
+    "nimi": "o",
+    "usage": "hey (50), shall (42), should (37), ought (29)"
+  },
+  {
+    "nimi": "oko",
+    "usage": "eye (68)"
+  },
+  {
+    "nimi": "olin",
+    "usage": "loving (100), love (96), romance (69), attraction (40), intimate (33), passion (29), beloved (27)"
+  },
+  {
+    "nimi": "ona",
+    "usage": "her (95), them (90), their (83), they (79), it (73), his (73), themselves (53), itself (47), himself (36), herself (36)"
+  },
+  {
+    "nimi": "open",
+    "usage": "open (100), begin (100), starting (69), opening (60), initial (40), access (36), launch (33), engage (33), starter (32), origin (25), introduction (25)"
+  },
+  {
+    "nimi": "pakala",
+    "usage": "destruction (100), broken (100), damage (81), ruin (75), goddamn (75), burst (75), accident (73), destroy (71), hurt (67), heck (67), error (67), injure (65), crash (65), harm (64), break (63), fault (57), failure (57), flaw (53), crack (52), collapse (50), snap (48), fuck (47), fucking (42), trouble (40), rip (38), wound (33), explode (33), crush (33), strike (29), offense (29), crap (27), boom (27)"
+  },
+  {
+    "nimi": "pali",
+    "usage": "work (100), do (100), construct (94), make (93), activity (93), build (92), working (90), task (86), create (84), function (83), occupation (81), operating (69), project (67), execute (67), manufacturing (64), develop (60), compose (58), assemble (58), assignment (53), perform (50), operation (50), creation (50), commit (50), service (48), effort (48), operate (47), implement (47), accomplish (47), implementation (45), processing (43), behaviour (43), behave (43), career (41), employment (40), actively (40), practice (38), development (38), execution (36), role (35), procedure (35), functional (35), prepare (33), construction (33), achieve (33), interact (32), undergo (31), accomplishment (31), undertake (29), busy (29), behavioural (28), productive (27), industrial (27), plan (25), participation (25), manipulate (25)"
+  },
+  {
+    "nimi": "palisa",
+    "usage": "stick (100), rod (94), stake (80), pole (67), staff (41), straight (25), bar (25)"
+  },
+  {
+    "nimi": "pan",
+    "usage": "wheat (67), rice (53), carbohydrate (25)"
+  },
+  {
+    "nimi": "pana",
+    "usage": "put (93), deliver (90), grant (85), delivery (82), submit (78), transfer (71), distribute (65), distribution (58), donate (57), contribute (53), output (52), yield (50), share (50), publishing (50), offering (47), deploy (47), assign (47), deposit (45), convey (44), supply (40), offer (40), lend (40), input (40), emission (40), release (37), publish (37), pour (37), export (36), spend (35), serve (35), spread (33), serving (33), devote (33), administer (33), post (31), contribution (31), added (31), transmission (30), apply (30), present (29), bring (29), add (29), install (28), show (26), introduce (26), insert (25), exhibit (25), dedicate (25)"
+  },
+  {
+    "nimi": "pilin",
+    "usage": "feeling (100), emotion (100), feel (92), sentiment (83), mood (80), emotionally (76), sense (69), attitude (64), opinion (55), notion (55), perceive (50), impression (50), hypothesis (50), assume (50), deem (47), thought (39), speculation (38), experience (35), suspicion (30), reaction (30), belief (29), touch (27), outlook (25), estimated (25)"
+  },
+  {
+    "nimi": "pimeja",
+    "usage": "darkness (100), dark (100), black (100), shadow (50)"
+  },
+  {
+    "nimi": "pini",
+    "usage": "end (100), finish (94), ending (80), outcome (70), cease (70), close (v) (65), quit (55), latter (55), final (50), stop (47), complete (47), off (44), result (40), pause (33), interrupt (32), lock (30), over (29)"
+  },
+  {
+    "nimi": "pipi",
+    "usage": "bug (100), insect (92), spider (48)"
+  },
+  {
+    "nimi": "poka",
+    "usage": "hip (67), closely (40), sidebar (25), left (not right) (25), alongside (25)"
+  },
+  {
+    "nimi": "poki",
+    "usage": "container (100), jar (92), box (90), package (89), bag (87), basket (71), bottle (65), cabinet (61), locker (50), drawer (50), case (45), bowl (42), cup (36), pack (33), cage (33), purse (31), trunk (29), pitcher (27), cell (26)"
+  },
+  {
+    "nimi": "pona",
+    "usage": "good (100), appropriate (90), nice (88), simply (80), fine (80), quality (79), pleasant (73), friendly (72), well (70), simple (69), benefit (69), virtue (67), correct (60), repair (57), fix (57), right (not wrong) (55), cool (55), okay (54), fixed (54), validity (53), kind (53), helpful (53), successfully (50), peaceful (50), merit (50), improve (50), ideal (50), ethical (50), improvement (47), fair (45), heal (43), supportive (42), awesome (41), approval (41), effectiveness (40), correctly (40), adequate (40), reasonable (38), decent (38), wonderful (36), welfare (36), thanks (36), terrific (36), plain (36), peace (36), fairly (36), worthy (33), well-being (33), resolve (33), natural (33), lovely (33), improved (33), easy (33), mercy (32), efficiency (32), useful (31), justice (31), effective (31), courtesy (31), beautiful (31), perfect (29), relieve (28), please (28), solve (27), free (27), better (27), success (26), sufficient (25), qualify (25), morality (25), fascinating (25)"
+  },
+  {
+    "nimi": "sama",
+    "usage": "equivalent (87), as (80), similarly (67), equality (55), equally (54), like (47), likewise (40), relation (36), relate (35), seem (33), even (33), copy (31), mutual (29), equity (29), resemble (27), fellow (25)"
+  },
+  {
+    "nimi": "seli",
+    "usage": "heat (100), fire (100), hot (92), burning (85), flame (83), burn (70), warm (65), warming (58), temperature (36), cook (31), cooking (27)"
+  },
+  {
+    "nimi": "selo",
+    "usage": "skin (83), boundary (65), peel (50), outer (50), shape (44), outline (40), edge (40), external (36), border (32), frame (30)"
+  },
+  {
+    "nimi": "seme",
+    "usage": "huh (44)"
+  },
+  {
+    "nimi": "sewi",
+    "usage": "upper (100), sacred (80), top (76), sky (71), high (60), spiritual (50), raise (50), highly (47), peak (43), God (39), rise (37), above (36), magical (30), summit (27), weather (25), religious (25), arise (25)"
+  },
+  {
+    "nimi": "sijelo",
+    "usage": "body (100), flesh (50), form (35), figure (32)"
+  },
+  {
+    "nimi": "sike",
+    "usage": "round (100), circle (100), sphere (82), loop (71), cycle (70), wheel (64), disc (59), globe (55), circuit (46), spin (36), ring (33), surround (31), spot (25), rolling (25), curve (25)"
+  },
+  {
+    "nimi": "sin",
+    "usage": "new (100), newly (92), back (i.e. as before, returned) (40), again (40), unprecedented (33), innovative (32), modern (30), recent (27), another (27), additionally (27), repeat (26), innovation (25)"
+  },
+  {
+    "nimi": "sina",
+    "usage": "you (94), yourself (67)"
+  },
+  {
+    "nimi": "sinpin",
+    "usage": "front (92), face (n) (62), wall (50), chest (anatomy) (27)"
+  },
+  {
+    "nimi": "sitelen",
+    "usage": "picture (100), image (97), graphic (93), symbol (89), drawing (88), photo (85), writing (75), write (75), painting (75), illustrate (75), depict (68), draw (67), portrait (55), icon (53), mark (47), portray (45), record (40), render (36), text (33), note (30), sign (29), pattern (28), poster (27), graph (27), compose (25)"
+  },
+  {
+    "nimi": "sona",
+    "usage": "know (100), information (100), understand (94), aware (83), info (79), awareness (68), data (60), wise (58), recognition (55), expertise (42), intelligence (40), smart (38), sure (36), experienced (33), insight (31), identify (28), educational (28), logical (27), skill (25), logic (25), acknowledge (25)"
+  },
+  {
+    "nimi": "soweli",
+    "usage": "animal (95), deer (87), dog (67), cat (61), llama (58), goat (56), Musteloidea (50), beast (43), lion (42), wolf (36), horse (32), mouse (30), tiger (29), procyonid (26), monkey (26), rabbit (25)"
+  },
+  {
+    "nimi": "suli",
+    "usage": "large (100), importance (100), important (92), significant (87), matter (v) (86), significantly (80), grand (80), huge (79), weight (77), vast (77), crucial (75), prominent (73), fat (70), substantial (69), long (69), significance (67), heavy (65), giant (65), extended (64), considerable (63), thick (62), major (60), tremendous (56), magnitude (54), great (53), length (50), height (50), importantly (47), greatly (47), severe (44), mass (42), dramatically (42), relevant (40), fundamental (38), stretch (37), extend (37), enormous (37), heavily (36), expansion (33), depth (32), volume (31), extension (31), age (31), profound (30), widely (29), density (29), influential (28), growth (27), emphasis (27), remarkable (25), mainly (25)"
+  },
+  {
+    "nimi": "suno",
+    "usage": "sun (94), solar (93), light (77), sunlight (75), shine (60)"
+  },
+  {
+    "nimi": "supa",
+    "usage": "table (83), board (67), furniture (50), lie (be in flat position) (47), flat (47), level (44), desk (43), couch (40), stage (38), seat (38), bench (38), tablet (33), chair (29), counter (28), pad (25)"
+  },
+  {
+    "nimi": "suwi",
+    "usage": "sweet (100), cute (92), candy (65), gentle (33), dessert (32), tender (31), soft (27), darling (26), treat (25)"
+  },
+  {
+    "nimi": "tan",
+    "usage": "from (93), reason (86), because (80), source (64), origin (40), motive (38), cause (36), purpose (33), per (33), since (32), factor (29)"
+  },
+  {
+    "nimi": "taso",
+    "usage": "but (100), solely (82), however (82), exclusively (80), though (79), exclusive (70), despite (69), nonetheless (67), mere (64), except (53), yet (50), nevertheless (50), regardless (33), exception (27)"
+  },
+  {
+    "nimi": "tawa",
+    "usage": "move (100), motion (100), go (100), movement (94), towards (93), to (93), for (81), travel (69), trip (60), walk (58), advance (56), transport (50), pass (50), walking (47), migration (46), from the perspective of (44), march (38), slide (36), drift (35), according to (33), transfer (29), cross (29), till (27), forward (26), progress (25), momentum (25), attend (25)"
+  },
+  {
+    "nimi": "telo",
+    "usage": "fluid (100), water (94), wet (73), wash (52), pool (42), drink (33), shower (30), lake (29)"
+  },
+  {
+    "nimi": "tenpo",
+    "usage": "time (100), timing (72), occasion (65), phase (64), moment (56), date (50), circumstance (50), hour (47), appointment (44), scenario (42), event (40), season (39), period (38), situation (31), interval (31)"
+  },
+  {
+    "nimi": "toki",
+    "usage": "talk (100), speak (100), say (100), hello (100), conversation (100), communication (100), tell (93), statement (92), hi (88), discuss (83), discourse (75), comment (67), refer (62), message (61), dialogue (60), reporting (56), call (56), narrative (53), respond (50), disclose (50), contact (50), commentary (50), verbal (47), proposal (47), admit (47), tale (46), story (44), interview (44), declare (44), answer (43), report (42), expression (42), phrase (41), hey (40), excuse (40), response (39), reply (39), suggest (33), interaction (33), declaration (33), quote (32), state (31), negotiate (30), claim (27), feedback (26), suggestion (25), proposition (25), coverage (25), counsel (25), consult (25)"
+  },
+  {
+    "nimi": "tomo",
+    "usage": "building (100), housing (86), chamber (85), home (82), room (81), shelter (80), residence (68), suite (59), domestic (58), structural (54), structure (53), residential (50), facility (50), cabin (42), apartment (42), station (39), hall (38), venue (33), construction (33)"
+  },
+  {
+    "nimi": "tu",
+    "usage": "two (100), pair (88), double (80), both (64), twice (50), couple (50), cut (38), divide (35)"
+  },
+  {
+    "nimi": "unpa",
+    "usage": "sex (100), sexual (95), sexually (92), fucking (42), fuck (40)"
+  },
+  {
+    "nimi": "uta",
+    "usage": "lip (47), kiss (44), jaw (42), bite (31), chew (25)"
+  },
+  {
+    "nimi": "utala",
+    "usage": "fight (100), battle (100), conflict (93), contend (90), assault (88), attack (82), versus (69), challenge (64), violence (63), hit (63), contest (56), oppose (50), dispute (50), competition (38), resist (36), aggressive (36), beat (35), punch (33), opposed (33), hostile (33), confront (31), opposition (30), strike (29), against (29)"
+  },
+  {
+    "nimi": "walo",
+    "usage": "white (100), pale (74)"
+  },
+  {
+    "nimi": "wan",
+    "usage": "one (93), united (92), unity (90), combined (70), unite (67), single (64), unit (60), combine (44), union (43), solo (40), bind (40), whole (38), integration (37), component (28), alone (27), together (26), segment (25), particular (25)"
+  },
+  {
+    "nimi": "waso",
+    "usage": "bird (100), chicken (44), duck (40), eagle (30)"
+  },
+  {
+    "nimi": "wawa",
+    "usage": "strength (100), power (100), powerful (92), strong (88), energy (88), strongly (82), force (73), intense (71), bold (68), intensity (65), reinforce (63), strengthen (62), firmly (62), charge (53), brave (47), rapid (42), electrical (42), might (40), tough (35), electricity (33), rapidly (30), fast (30), confident (27), severe (25), boost (25)"
+  },
+  {
+    "nimi": "weka",
+    "usage": "rid (100), remove (93), apart (80), away (73), loss (69), dismiss (67), leave (64), distant (64), abandon (63), far (60), disappear (47), avoid (47), out (45), escape (42), distance (42), flee (38), withdraw (33), reject (33), sweep (31), resign (31), exit (31), ban (31), strip (29), fade (27), separate (25), remote (25), lose (25)"
+  },
+  {
+    "nimi": "wile",
+    "usage": "want (100), wish (94), require (90), need (88), intention (84), willing (83), will (81), intent (80), motivation (75), yearn (71), ought (71), prefer (67), hope (67), ambition (67), requirement (64), required (61), must (59), decision (54), should (53), demand (50), request (47), agenda (41), goal (40), would (38), select (38), motive (38), opt (36), criteria (36), consent (35), choose (35), urge (33), shall (33), pick (33), objective (33), determination (33), depend (32), elect (31), dependent (31), deserve (30), selection (29), strive (27), choice (27), supposed (25), interest (25), enthusiasm (25)"
+  }
+]

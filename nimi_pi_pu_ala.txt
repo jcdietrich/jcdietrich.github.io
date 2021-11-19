@@ -1,0 +1,282 @@
+namako:
+  - spice 82
+  - extra 65
+  - adornment 50
+  - extension 38
+  - bonus 37
+  - salt 32
+  - fancy 31
+  - special 27
+  - spare 23
+  - added 19
+  - add 18
+  - addition 16
+  - flavour 14
+  - sodium 13
+kin:
+  - also 79
+  - too 73
+  - indeed 25
+  - even 22
+  - additionally 18
+  - furthermore 17
+  - quite 14
+  - particularly 13
+  - certain 10
+  - such 7
+oko:
+  - eye 68
+  - look at 14
+  - visual 14
+  - view 11
+  - glance 11
+  - sight 10
+kipisi:
+  - division 65
+  - slice 62
+  - cut 56
+  - divide 55
+  - segment 50
+  - chop 50
+  - portion 38
+  - piece 35
+  - part 33
+  - rip 31
+  - half 31
+  - clip 30
+  - chunk 28
+  - carve 27
+  - sector 25
+  - separate 25
+  - percentage 25
+  - fraction 23
+  - component 22
+  - proportion 18
+  - partial 14
+  - element 13
+  - sample 13
+  - factor 10
+  - quarter 9
+  - aspect 9
+leko:
+  - square 64
+  - cube 50
+  - block 43
+  - stair 39
+  - brick 31
+  - polyhedron 30
+  - corner 14
+  - step 13
+  - format 9
+  - bar 8
+  - angle 8
+  - panel 8
+  - grid 6
+  - chunk 6
+  - base 6
+  - box 5
+monsuta:
+  - scary 60
+  - fear 59
+  - monster 58
+  - horror 42
+  - disturbing 30
+  - beast 29
+  - demon 25
+  - concerning 20
+  - shock 14
+  - concern 13
+  - danger 12
+tonsi:
+  - non-binary person 59
+  - transgender person 56
+  - gender non-conforming person 53
+  - LGBTQ+ 24
+  - intersex person 18
+jasima:
+  - reflect 59
+  - reverse 35
+  - flip 14
+  - mutual 14
+  - counterpart 14
+  - streaming 13
+  - copy 13
+  - contrast 9
+  - represent 9
+kijetesantakalu:
+  - procyonid 53
+  - Musteloidea 30
+soko:
+  - mushroom 53
+  - fungus 42
+meso:
+  - average 53
+  - moderate 50
+  - medium 47
+  - intermediate 29
+  - norm 20
+  - usual 15
+  - somewhat 14
+  - neutral 13
+  - adequate 13
+  - standard 12
+  - decent 8
+  - slightly 7
+  - typical 7
+epiku:
+  - epic 50
+  - awesome 29
+  - amazing 28
+  - spectacular 15
+  - fantastic 7
+  - wonderful 7
+lanpan:
+  - steal 48
+  - seize 42
+  - grab 25
+  - capture 24
+  - catch 15
+  - retrieve 14
+  - rob 13
+  - theft 9
+  - get 9
+  - gain 8
+  - claim 7
+  - extract 7
+'n':
+  - um 47
+  - hmm 33
+  - uh-huh 11
+misikeke:
+  - medication 46
+  - medicine 42
+  - pill 30
+  - drug 17
+  - vaccine 17
+  - treatment 12
+  - psychoactive 8
+samu:
+  - wanting to create new words 46
+apeja:
+  - shame 43
+  - embarrassed 27
+  - guilty 13
+  - blame 9
+mulapisu:
+  - pizza 40
+majuna:
+  - elderly 36
+  - old 33
+  - senior 21
+  - historical 20
+  - ancient 17
+powe:
+  - fake 36
+  - pretend 33
+  - trick 31
+  - lie (saying untruth) 21
+  - myth 21
+  - trap 19
+  - illusion 15
+  - fantasy 14
+  - bullshit 13
+  - cheat 13
+  - fiction 13
+  - paradox 7
+isipin:
+  - think 29
+  - consciousness 18
+  - imagination 15
+  - theory 13
+  - notion 10
+  - concept 10
+  - considering 10
+  - thought 9
+  - judgement 8
+  - concentrate 8
+  - focus 8
+pake:
+  - stop 27
+  - lock 20
+  - wall 17
+  - interrupt 16
+  - limitation 13
+  - cease 13
+  - restrict 13
+  - deny 13
+  - barrier 11
+  - interfere 9
+  - prevention 8
+linluwi:
+  - network 25
+  - Internet 15
+  - virtual 13
+  - digital 8
+  - net 7
+kapesi:
+  - brown 24
+  - grey 7
+kiki:
+  - spiky 21
+  - sharp 14
+  - angle 8
+kan:
+  - alongside 17
+  - together 16
+  - with 13
+  - involved 8
+waleja:
+  - context 15
+  - circumstance 14
+  - situation 8
+  - emphasis 7
+  - topic 6
+  - case 5
+  - premise 4
+  - subject 4
+kuntu:
+  - laughter 14
+  - chuckle 13
+  - laugh 8
+  - comedy 8
+ete:
+  - beyond 14
+loka:
+  - limb 13
+wa:
+  - wow 11
+po:
+  - four 10
+taki:
+  - bond 10
+  - attract 8
+oke:
+  - alright 9
+  - fine 7
+ke:
+  - alright 9
+teje:
+  - right (not left) 9
+soto:
+  - left (not right) 8
+pata:
+  - sibling 7
+kamalawala:
+  - revolution 7
+likujo:
+  - seven 7
+  - gathering 7
+peto:
+  - cry 7
+pomotolo:
+  - tomato 7
+te:
+  - (opening quotation particle) 7
+to:
+  - (closing quotation particle) 7
+usawi: 
+  - magic 7
+Pingo:
+  - car 6
+ewe:
+  - stone 3
