@@ -1,0 +1,3 @@
+[submodule "worldspanner"]
+	path = worldspanner
+	url = https://github.com/jcdietrich/worldspanner.git
